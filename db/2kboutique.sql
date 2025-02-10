@@ -42,7 +42,6 @@ CREATE TABLE Commande (
     dateCommande TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     statut ENUM('En cours', 'Expédiée', 'Livrée', 'Annulée') DEFAULT 'En cours',
     FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
-    FOREIGN KEY (idAdministrateur) REFERENCES Administrateur(idAdministrateur) ON DELETE SET NULL
 );
 
 -- Table Produit_Commande (relation N:N entre Produit et Commande)
