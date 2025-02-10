@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('utilisateur', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('types_produits', function (Blueprint $table) {
+            $table->id('idTypeProduit');
+            $table->string('nomType', 50)->unique();
         });
+        
     }
 
     /**
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('utilisateur');
+        Schema::dropIfExists('types_produits');
     }
 };
