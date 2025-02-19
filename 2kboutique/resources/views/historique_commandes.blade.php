@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulter Commande - Redstore</title>
+    <title>Historique des Commandes - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,8 +24,14 @@
                             <li><a href="{{ url('products_homme') }}">Hommes</a></li>
                             <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                         </ul>
+                    </li> 
+                    <li class="submenu">
+                        <a href="#">Commandes</a>
+                        <ul class="dropdown">
+                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\consulter_commande.blade.php') }}">Consulter commande</a></li>
+                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\suivie_commande.blade.php') }}">Suivie de commande</a></li>
+                        </ul>
                     </li>
-                    <li><a href="#">Commandes</a></li>
                     <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
@@ -35,19 +41,28 @@
     </div>
 
     <div class="small-container">
-        <h2>Consulter votre commande</h2>
-        <form>
-            <input type="text" placeholder="Numéro de commande" required>
-            <button type="submit" class="btn">Consulter</button>
-        </form>
-        <div class="order-details">
-            <!-- Détails de la commande à afficher ici -->
-            <h3>Détails de la commande</h3>
-            <p>Commande #12345</p>
-            <p>Date : 2025-01-01</p>
-            <p>Statut : En cours</p>
-            <p>Total : 50.000 FCFA</p>
-        </div>
+        <h2>Historique de vos commandes</h2>
+        <table>
+            <tr>
+                <th>Numéro de commande</th>
+                <th>Date</th>
+                <th>Statut</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>#12345</td>
+                <td>2025-01-01</td>
+                <td>Livrée</td>
+                <td>50.000 FCFA</td>
+            </tr>
+            <tr>
+                <td>#12346</td>
+                <td>2025-01-02</td>
+                <td>En cours</td>
+                <td>30.000 FCFA</td>
+            </tr>
+            <!-- Ajouter d'autres commandes ici -->
+        </table>
     </div>
 
     <div class="footer">
@@ -81,7 +96,7 @@
                     <ul class="social-links">
                         <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i ="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                         <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
                     </ul>
                 </div>

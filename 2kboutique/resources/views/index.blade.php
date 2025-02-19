@@ -17,11 +17,11 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="{{ url('index') }}">Accueil</a></li>
+                        <li><a href="{{ url('/') }}">Accueil</a></li>
                         <li class="submenu">
                             <a href="#">Vêtements</a>
                             <ul class="dropdown">
@@ -29,8 +29,11 @@
                                 <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Commandes</a></li>
-                        <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
+                        <li class="submenu">
+                            <a href="{{ url('/account') }}">Commandes</a>
+                            
+                        </li>
+                        <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                     </ul>
                 </nav>
                 <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
@@ -200,7 +203,7 @@
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-3.jpg') }}"></a>
                 <h4>Loafers Men (Gray)</h4>
                 <div class="rating">
-                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -221,14 +224,92 @@
                 <p>21.000 FCFA</p>
             </div>  
         </div>
-        
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
+
+        <div class="offer">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="{{ asset('images/imgAcceuil.png') }}" class="offer-img">
+                    </div>
+                    <div class="col-2">
+                        <p>Exclusivement disponible sur 2KBoutique</p>
+                        <h1>Vêtements Gucci</h1>
+                        <small> Achetez les dernières collections de vetements Gucci en ligne sur 2kboutique aux meilleurs prix, parmi les plus grandes marques telles qu'Adidas, Nike, Puma, Asics et Sparx, et profitez de votre shopping en toute tranquillité.</small><br>
+                        <a href="{{ url('products') }}" class="btn">Acheter maintenant &#8594;</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="testimonial">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-quote-left" ></i>
+                        <p>Excellente expérience dans l’ensemble ! Le produit est arrivé à temps et bien emballé. Il est superbe et fonctionne parfaitement. J’aurais juste aimé plus de variété de couleurs. Malgré cela, je suis très satisfait de mon achat !</p>
+                        <div class="rating"> 
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <img src="{{ asset('images/yaya.jpg') }}">
+                        <h3>Soro yaya</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fa-quote-left" ></i>
+                        <p>J’ai fait des achats sur de nombreuses boutiques en ligne, mais celle-ci se démarque vraiment ! Le produit a dépassé mes attentes en termes de qualité et d’apparence. De plus, la livraison gratuite était un excellent bonus ! Je reviendrai certainement pour d’autres achats.</p>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <img src="{{ asset('images/photoWilfried.jpg') }}">
+                        <h3>Wilfried Kigninman TOURE</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fa-quote-left" ></i>
+                        <p>Wow ! Je suis vraiment impressionné par le service et la qualité du produit que j’ai acheté. Le site était facile à naviguer, et la livraison a été ultra rapide. En plus, la remise que j’ai eue a rendu l’achat encore plus intéressant ! Je recommande vivement.</p>
+                        <div class="rating"> 
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <img src="{{ asset('images/josue.jpg') }}">
+                        <h3>KOUAKIO Josué Noel Yao</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brands">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="{{ asset('images/gucci.png') }}" alt="">
+                    </div>
+                    <div class="col-5">
+                        <img src="{{ asset('images/adidas.png') }}" alt="">
+                    </div>
+                    <div class="col-5">
+                        <img src="{{ asset('images/nike.png') }}" alt="">
+                    </div>
+                    <div class="col-5">
+                        <img src="{{ asset('images/puma.png') }}" alt="">
+                    </div>
+                    <div class="col-5">
+                        <img src="{{ asset('images/prada.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
     </div>
 
     <div class="footer">

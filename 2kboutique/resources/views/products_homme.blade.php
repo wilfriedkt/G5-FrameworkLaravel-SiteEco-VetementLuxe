@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -28,7 +29,7 @@
 
             <div class="logo">
 
-                <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
 
             </div>
 
@@ -36,11 +37,11 @@
 
                 <ul id="MenuItems">
 
-                    <li><a href="{{ url('index') }}">Accueil</a></li>
+                    <li><a href="{{ url('/') }}">Accueil</a></li>
 
                     <li class="submenu">
 
-                        <a href="#">Vêtements</ ```blade
+                        <a href="#">Vêtements</a>
 
                         <ul class="dropdown">
 
@@ -52,7 +53,7 @@
 
                     </li>
 
-                    <li><a href="#">Commandes</a></li>
+                    <li><a href="{{ url('account') }}">Commandes</a></li>
 
                     <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
 
@@ -62,8 +63,7 @@
 
             <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
 
-            <a href="#"><img src="{{ asset('images/profile.svg') }}" alt="profile" width="35px" height="35px"></a>
-
+           
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
 
         </div>
@@ -116,7 +116,7 @@
 
                 </div>
 
-                <p>$50.00</p>
+                <p>5.000 FCFA</p>
 
             </div>
 
@@ -140,7 +140,7 @@
 
                 </div>
 
-                <p>$60.00</p>
+                <p>2.500FCFA</p>
 
             </div>
 
@@ -164,7 +164,7 @@
 
                 </div>
 
-                <p>$55.00</p>
+                <p> 5.000 FCFA</p>
 
             </div>
 
@@ -188,7 +188,7 @@
 
                 </div>
 
-                <p>$70.00</p>
+                <p>5.000 FCFA</p>
 
             </div>  
 
@@ -215,86 +215,82 @@
     <div class="footer">
 
         <div class="container">
-
+        
             <div class="row">
-
+        
                 <div class="footer-col-1">
-
+        
                     <h3>Téléchargez Notre Application</h3>
-
+        
                     <p>Téléchargez l'application pour Android et iOS.</p>
-
+        
                     <div class="app-logo">
-
+        
                         <img src="{{ asset('images/play-store.png') }}" alt="Google Play">
-
+        
                         <img src="{{ asset('images/app-store.png') }}" alt="App Store">
-
+        
                     </div>
-
+        
                 </div>
-
+        
                 <div class="footer-col-2">
-
-                    <img src="{{ asset('images/logo_2kboutique.png') 
-
-                    }}" alt="2K Boutique Logo">
-
+                    <img src="{{ asset('images/logo_2kboutique.png') }}" alt="2K Boutique Logo">
                     <p>Notre objectif est de rendre le plaisir et les bienfaits du shopping accessibles à tous.</p>
-
+        
                 </div>
-
+        
                 <div class="footer-col-3">
-
+        
                     <h3>Liens Utiles</h3>
-
+        
                     <ul>
-
+        
                         <li>Blog</li>
-
+        
                         <li>Politique de retour</li>
-
+        
                         <li>Devenir affilié</li>
-
+        
                         <li>Consulter la FAQ</li>
-
+                        
                         <li>Contacter le service support</li>
 
                         <li>À propos de 2KBoutique</li>
 
                     </ul>
-
+        
                 </div>
 
                 <div class="footer-col-4">
-
+        
                     <h3>Suivez-nous</h3>
-
+        
                     <ul class="social-links">
-
+        
                         <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-
+        
                         <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-
+        
                         <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-
+        
                         <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
-
+        
                     </ul>
-
+        
                 </div>
-
+        
             </div>
-
+        
             <hr>
-
+        
             <p class="copyright">Copyright © 2025 - 2KBoutique - Tous droits réservés</p>
-
+        
         </div>
 
     </div>
 
-
+    
     <script>
 
         var menuItems = document.getElementById("MenuItems");

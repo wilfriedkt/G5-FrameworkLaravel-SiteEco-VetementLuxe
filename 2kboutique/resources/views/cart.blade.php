@@ -6,6 +6,7 @@
     <title>All Products - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -13,23 +14,23 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('index') }}">Accueil</a></li>
+                    <li><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="submenu">
                         <a href="#">Vêtements</a>
                         <ul class="dropdown">
-                            <li><a href="{{ url('products_homme') }}">Hommes</a></li>
-                            <li><a href="{{ url('products_femme') }}">Femmes</a></li>
+                            <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
+                            <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Commandes</a></li>
-                    <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
+                    <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
-            <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
+            <a href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
@@ -48,12 +49,12 @@
                         <div>
                             <p>Gucci - Modèle ‎823832 XJG7Z 1152</p>
                             <small>Prix: 10.000 FCFA</small><br>
-                            <a href="">Suprimé</a>
+                            <a href="">Supprimé</a>
                         </div>
                     </div>
                 </td>
-                <td>< input type="number" value="1"></td>
-                <td>Prix: 10.000 FCFA</td>
+                <td><input type="number" value="1"></td>
+                <td>10.000 FCFA</td>
             </tr>
             <tr>
                 <td>
@@ -62,7 +63,7 @@
                         <div>
                             <p>Gucci - Modèle ‎789582 XJGUL 5728</p>
                             <small>Prix: 8.500 FCFA</small><br>
-                            <a href="">Suprimé</a>
+                            <a href="">Supprimé</a>
                         </div>
                     </div>
                 </td>
@@ -76,7 +77,7 @@
                         <div>
                             <p>Gucci - Modèle ‎789582 XJGUL 5728</p>
                             <small>Prix: 8.500 FCFA</small><br>
-                            <a href="">Suprimé</a>
+                            <a href="">Supprimé</a>
                         </div>
                     </div>
                 </td>

@@ -6,6 +6,7 @@
     <title>All Products - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -13,11 +14,11 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('index') }}">Accueil</a></li>
+                    <li><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="submenu">
                         <a href="#">Vêtements</a>
                         <ul class="dropdown">
@@ -25,12 +26,12 @@
                             <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Commandes</a></li>
+                    <li><a href="{{ url('account') }}">Commandes</a></li>
                     <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
             <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
-            <a href="#"><img src="{{ asset('images/profile.svg') }}" alt="profile" width="35px" height="35px"></a>
+          
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
@@ -58,7 +59,7 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$60.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-2.jpg') }}"></a>
@@ -70,7 +71,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$45.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-3.jpg') }}"></a>
@@ -82,7 +83,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$25.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-10.jpg') }}"></a>
@@ -94,7 +95,7 @@
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$58.00</p>
+                <p>5.000 FCFA</p>
             </div>  
         </div>
 
@@ -109,7 +110,7 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$60.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-3.jpg') }}"></a>
@@ -120,7 +121,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$31.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-7.jpg') }}"></a>
@@ -132,7 +133,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$10.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-2.jpg') }}"></a>
@@ -144,7 +145,7 @@
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$45.00</p>
+                <p>5.000 FCFA</p>
             </div>  
         </div>
 
@@ -159,7 +160,7 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$20.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-10.jpg') }}"></a>
@@ -171,19 +172,19 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$48.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-11.jpg') }}"></a>
                 <h4>Loafers Men (Gray)</h4>
                 <div class="rating">
-                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$15.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-12.jpg') }}"></a>
@@ -195,7 +196,7 @@
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$21.00</p>
+                <p>5.000 FCFA</p>
             </div>  
         </div>
 

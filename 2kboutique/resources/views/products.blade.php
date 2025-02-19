@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tous les Produits - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,11 +14,11 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('index') }}">Accueil</a></li>
+                    <li><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="submenu">
                         <a href="#">Vêtements</a>
                         <ul class="dropdown">
@@ -25,12 +26,12 @@
                             <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Commandes</a></li>
+                    <li><a href="{{ url('account') }}">Commandes</a></li>
                     <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
             <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
-            <a href="#"><img src="{{ asset('images/profile.svg') }}" alt="profile" width="35px" height="35px"></a>
+
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
@@ -58,11 +59,11 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$60.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-2.jpg') }}"></a>
-                <h4>Lace-Up Running Shoes</h4>
+                <h4>Flat Lace-Fastening Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -70,7 +71,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$45.00</p>
+                <p>5.000 FCFA</p>
             </div>
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-3.jpg') }}"></a>
@@ -82,10 +83,11 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$25.00</p>
-            </div <div class="col-4">
-                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-4.jpg') }}"></a>
-                <h4>Casual Sneakers</h4>
+                <p>5.000 FCFA</p>
+            </div>
+    <div class="col-4">
+                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-10.jpg') }}"></a>
+                <h4>Flat Lace-Fastening Shoes</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -93,8 +95,16 @@
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$30.00</p>
+                <p>5.000 FCFA</p>
             </div>
+        </div>
+
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
         </div>
     </div>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historique des Commandes - Redstore</title>
+    <title>Consulter Commande - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,9 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('index') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('index') }}">
+                    <img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px">
+                </a>
             </div>
             <nav>
                 <ul id="MenuItems">
@@ -25,38 +27,39 @@
                             <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Commandes</a></li>
+                    
+                    <li class="submenu">
+                        <a href="#">Commandes</a>
+                        <ul class="dropdown">
+                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\suivie_commande.blade.php') }}">Suivie de commande</a></li>
+                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\historique_commandes.blade.php') }}">Historique de commande</a></li>
+                        </ul>
+                    </li>
                     <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
-            <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
+            <a href="{{ url('cart') }}">
+                <img src="{{ asset('images/cart.png') }}" width="30px" height="30px">
+            </a>
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
 
     <div class="small-container">
-        <h2>Historique de vos commandes</h2>
-        <table>
-            <tr>
-                <th>Numéro de commande</th>
-                <th>Date</th>
-                <th>Statut</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td>#12345</td>
-                <td>2025-01-01</td>
-                <td>Livrée</td>
-                <td>50.000 FCFA</td>
-            </tr>
-            <tr>
-                <td>#12346</td>
-                <td>2025-01-02</td>
-                <td>En cours</td>
-                <td>30.000 FCFA</td>
-            </tr>
-            <!-- Ajouter d'autres commandes ici -->
-        </table>
+        <h2>Consulter votre commande</h2>
+        <form>
+            <input type="text" placeholder="Numéro de commande" required>
+            <button type="submit" class="btn">Consulter</button>
+        </form>
+
+        <div class="order-details">
+            <!-- Détails de la commande à afficher ici -->
+            <h3>Détails de la commande</h3>
+            <p>Commande #12345</p>
+            <p>Date : 2025-01-01</p>
+            <p>Statut : En cours</p>
+            <p>Total : 50.000 FCFA</p>
+        </div>
     </div>
 
     <div class="footer">
@@ -70,10 +73,12 @@
                         <img src="{{ asset('images/app-store.png') }}" alt="App Store">
                     </div>
                 </div>
+
                 <div class="footer-col-2">
                     <img src="{{ asset('images/logo_2kboutique.png') }}" alt="2K Boutique Logo">
                     <p>Notre objectif est de rendre le plaisir et les bienfaits du shopping accessibles à tous.</p>
                 </div>
+
                 <div class="footer-col-3">
                     <h3>Liens Utiles</h3>
                     <ul>
@@ -85,6 +90,7 @@
                         <li>À propos de 2KBoutique</li>
                     </ul>
                 </div>
+
                 <div class="footer-col-4">
                     <h3>Suivez-nous</h3>
                     <ul class="social-links">
@@ -95,6 +101,7 @@
                     </ul>
                 </div>
             </div>
+
             <hr>
             <p class="copyright">Copyright © 2025 - 2KBoutique - Tous droits réservés</p>
         </div>
@@ -103,6 +110,7 @@
     <script>
         var menuItems = document.getElementById("MenuItems");
         menuItems.style.maxHeight = "0px";
+
         function menutoggle() {
             if (menuItems.style.maxHeight == "0px") {
                 menuItems.style.maxHeight = "200px";
