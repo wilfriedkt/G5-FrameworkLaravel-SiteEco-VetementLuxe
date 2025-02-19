@@ -615,10 +615,10 @@ th:last-child{
     display:inline-block;
 }
 .form-container form{
-    max-width: 300px;
+    max-width: 320px;
     padding: 0 20px;
     position: absolute;
-    top: 130px;
+    top: 100px;
     transition: transform 1s;
 }
 
