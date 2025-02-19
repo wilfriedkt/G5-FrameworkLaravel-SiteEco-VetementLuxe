@@ -51,7 +51,7 @@
                             <hr id="Indicator">
                         </div>
                         <form id="LoginForm">
-                            <input type="text" placeholder="username" required>
+                            <input type="email" placeholder="email" required>
                             <input type="password" placeholder="password" required>
                             <button type="submit" class="btn">Se connecter</button>
                             <a href="">Mot de passe oublié</a>
