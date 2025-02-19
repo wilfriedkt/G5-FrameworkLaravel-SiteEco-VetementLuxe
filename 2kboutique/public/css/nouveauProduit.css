@@ -5,11 +5,11 @@
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   overflow: scroll;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease; /* Transition pour l'élément principal */
 }
 
 .item_store_div:hover {
-  transform: scale(1.02);
+  transform: scale(1.02); /* Légère augmentation de la taille au survol */
 }
 
 .item_store>h1 {
@@ -22,6 +22,13 @@
 .item_store_div img {
   width: 145px;
   margin-top: 25px;
+  transition: transform 0.3s ease, border 0.3s ease; /* Transition pour l'image */
+  border: 2px solid transparent; /* Bordure par défaut */
+}
+
+.item_store_div img:hover {
+  transform: scale(1.1); /* Zoom sur l'image au survol */
+  border: 2px solid #24a3b5; /* Bordure colorée au survol */
 }
 
 .price_div {
@@ -33,6 +40,11 @@
   font-size: 14px;
   color: #757575;
   margin: 0 5px;
+  transition: color 0.3s ease; /* Transition pour le texte des prix */
+}
+
+.price_div p:hover {
+  color: #24a3b5; /* Changement de couleur au survol */
 }
 
 .price_div p:nth-child(1),
@@ -54,6 +66,11 @@
   font-size: 15px;
   color: #24a3b5;
   margin-top: 8px;
+  transition: color 0.3s ease; /* Transition pour la promotion */
+}
+
+.dis:hover {
+  color: #ff5722; /* Changement de couleur au survol */
 }
 
 .Your_Gadgets_Store,
@@ -67,4 +84,10 @@
   width: 200px;
   margin: 10px;
   text-align: center;
+  transition: transform 0.3s ease; /* Transition pour chaque produit */
+}
+
+.Your_Gadgets_Store div:hover,
+.trending_fashion_zone div:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
 }
