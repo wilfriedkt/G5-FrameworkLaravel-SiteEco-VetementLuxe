@@ -52,15 +52,15 @@
                         </div>
                         <form id="LoginForm">
                             <input type="email" placeholder="email" required>
-                            <input type="password" placeholder="password" required>
+                            <input type="password" placeholder="Mots de passe" required>
                             <button type="submit" class="btn">Se connecter</button>
                             <a href="">Mot de passe oublié</a>
                         </form>
                         
                         <form id="RegForm">
-                            <input type="text" placeholder="username" required>
+                            <input type="text" placeholder="Nom et Prénom" required>
                             <input type="email" placeholder="email" required>
-                            <input type="password" placeholder="password" required>
+                            <input type="password" placeholder="Mots de passe" required>
                             <button type="submit" class="btn">S'inscrire</button>
                         </form>
                     </div>
