@@ -35,7 +35,7 @@
                             </li>
                         @endauth
                         @guest
-                            <li><a href="{{ url('/login') }}">S'inscrire/Se connecter</a></li>
+                            <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                         @endguest
                         @auth
                             <li><a href="{{ url('/logout') }}">Se déconnecter</a></li>
