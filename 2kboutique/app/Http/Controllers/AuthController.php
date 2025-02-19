@@ -29,10 +29,13 @@ class AuthController extends Controller
             'motDePasse' => Hash::make($request->motDePasse),
         ]);
         
+        Auth::login($utilisateur);
+        session()->regenerate();
+
         if ($utilisateur) {
-            return redirect()->route('products_homme')->with('success', 'Super 😁 Compte crée avec succès !');
+            return redirect()->route('index')->with('success', 'Super 😁 Compte crée avec succès !');
         } else {
-            redirect()->route('products_homme')->with('error', "Echec de la création 👎🏿");
+            redirect()->route('account')->with('error', "Echec de la création 👎🏿");
         }
         // Redirection vers une autre page après l'inscription
         // return redirect()->route('/')->with('success', 'Inscription réussie !');

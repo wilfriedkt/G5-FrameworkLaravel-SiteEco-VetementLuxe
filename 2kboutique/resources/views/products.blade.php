@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tous les Produits - Redstore</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px"
+                        height="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
@@ -35,6 +40,10 @@
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
+    @if (session('success'))
+        <p style="color: green; font-size: 20px; font-weight: bold;">{{ session('success') }}
+        <p>
+    @endif
 
     <div class="small-container">
         <div class="row row-2">
@@ -51,7 +60,9 @@
         <div class="row">
             <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-11.jpg') }}"></a>
-                <a href="{{ url('products-details') }}"><h4>Downshifter Sports Shoes</h4></a>
+                <a href="{{ url('products-details') }}">
+                    <h4>Downshifter Sports Shoes</h4>
+                </a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -85,7 +96,7 @@
                 </div>
                 <p>5.000 FCFA</p>
             </div>
-    <div class="col-4">
+            <div class="col-4">
                 <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-10.jpg') }}"></a>
                 <h4>Flat Lace-Fastening Shoes</h4>
                 <div class="rating">
@@ -152,6 +163,7 @@
     <script>
         var menuItems = document.getElementById("MenuItems");
         menuItems.style.maxHeight = "0px";
+
         function menutoggle() {
             if (menuItems.style.maxHeight == "0px") {
                 menuItems.style.maxHeight = "200px";
@@ -161,4 +173,5 @@
         }
     </script>
 </body>
+
 </html>

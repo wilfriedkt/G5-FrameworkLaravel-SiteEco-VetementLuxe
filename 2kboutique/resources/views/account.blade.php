@@ -68,10 +68,6 @@
                             <button type="submit" class="btn">Se connecter</button>
                             <a href="">Mot de passe oublié</a>
                         </form>
-                        @if (session('success'))
-                            <p style="color: green; font-size: 20px; font-weight: bold;">{{ session('success') }}
-                            <p>
-                        @endif
                         @if (session('error'))
                             <p style="color: red; font-size: 20px; font-weight: bold;">{{ session('error') }}
                             <p>
@@ -95,7 +91,7 @@
                             <button type="submit" class="btn">S'inscrire</button>
                         </form>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>

@@ -13,13 +13,13 @@ Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name
 // Route d'accueil
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 
 // Route pour afficher tous les produits
 Route::get('/products', function () {
     return view('products'); 
-});
+})->name('products');
 
 // Route pour afficher les produits pour femmes
 Route::get('/products_femme', function () {
@@ -39,7 +39,7 @@ Route::get('/products_details', function () {
 // Route pour le compte utilisateur
 Route::get('/account', function () {
     return view('account');
-});
+})->name('account');
 
 // Route pour le panier
 Route::get('/cart', function () {
