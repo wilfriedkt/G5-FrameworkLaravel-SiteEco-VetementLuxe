@@ -29,11 +29,17 @@
                                 <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="{{ url('/account') }}">Commandes</a>
-                            
-                        </li>
-                        <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
+                        @auth
+                            <li class="submenu">
+                                <a href="{{ url('/account') }}">Commandes</a>
+                            </li>
+                        @endauth
+                        @guest
+                            <li><a href="{{ url('/login') }}">S'inscrire/Se connecter</a></li>
+                        @endguest
+                        @auth
+                            <li><a href="{{ url('/logout') }}">Se déconnecter</a></li>
+                        @endauth
                     </ul>
                 </nav>
                 <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
