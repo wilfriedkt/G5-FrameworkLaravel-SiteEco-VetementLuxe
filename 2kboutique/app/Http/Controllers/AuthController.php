@@ -22,15 +22,20 @@ class AuthController extends Controller
         ]);
 
         // Création de l'utilisateur
-        Utilisateur::create([
+        $utilisateur = Utilisateur::create([
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'email' => $request->email,
             'motDePasse' => Hash::make($request->motDePasse),
         ]);
-
+        
+        if ($utilisateur) {
+            return redirect()->route('products_homme')->with('success', 'Super 😁 Compte crée avec succès !');
+        } else {
+            redirect()->route('products_homme')->with('error', "Echec de la création 👎🏿");
+        }
         // Redirection vers une autre page après l'inscription
-        return redirect()->route('home')->with('success', 'Inscription réussie !');
+        // return redirect()->route('/')->with('success', 'Inscription réussie !');
     }
 
     //dans le blade ajoutez :

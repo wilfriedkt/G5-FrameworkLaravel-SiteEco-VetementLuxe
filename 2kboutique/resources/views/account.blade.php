@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>All Products - Redstore</title>
+    <title>Connexion/Inscription - 2kboutique</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px"
+                        height="60px"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
@@ -27,15 +33,21 @@
                             <li><a href="{{ url('products_femme') }}">Femmes</a></li>
                         </ul>
                     </li>
-                    
+
 
                 </ul>
             </nav>
-            
-            
+
+
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
     </div>
+    @if (session('success'))
+        <p style="color: green; font-size: 20px; font-weight: bold;">{{ session('success') }}</p>
+    @endif
+    @if (session('error'))
+        <p style="color: red; font-size: 20px; font-weight: bold;">{{ session('error') }}</p>
+    @endif
 
     <div class="account-page">
         <div class="container">
@@ -56,12 +68,30 @@
                             <button type="submit" class="btn">Se connecter</button>
                             <a href="">Mot de passe oublié</a>
                         </form>
-                        
-                        <form id="RegForm">
-                            <input type="text" placeholder="Nom" required>
-                            <input type="text" placeholder=" Prénom " required>
-                            <input type="email" placeholder="email" required>
-                            <input type="password" placeholder="Mots de passe" required>
+                        @if (session('success'))
+                            <p style="color: green; font-size: 20px; font-weight: bold;">{{ session('success') }}
+                            <p>
+                        @endif
+                        @if (session('error'))
+                            <p style="color: red; font-size: 20px; font-weight: bold;">{{ session('error') }}
+                            <p>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form method='POST' action='{{ route('inscription') }}' id="RegForm">
+                            @csrf
+                            <input type="text" name="nom" placeholder="Nom" required>
+                            <input type="text" name="prenom" placeholder=" Prénom " required>
+                            <input type="email" name="email" placeholder="email" required>
+                            <input type="password" name="motDePasse" placeholder="Mots de passe" required>
+                            <input type="password" name="motDePasse_confirmation" placeholder="Confirmer le mot de passe" required>
                             <button type="submit" class="btn">S'inscrire</button>
                         </form>
                     </div>
@@ -140,4 +170,5 @@
         }
     </script>
 </body>
+
 </html>

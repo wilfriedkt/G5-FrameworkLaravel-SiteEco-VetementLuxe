@@ -12,7 +12,7 @@ Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name
 
 // Route d'accueil
 Route::get('/', function () {
-    return view('index'); 
+    return view('index');
 });
 
 
