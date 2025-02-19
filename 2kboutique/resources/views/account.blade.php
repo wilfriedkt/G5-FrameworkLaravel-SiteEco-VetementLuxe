@@ -58,7 +58,8 @@
                         </form>
                         
                         <form id="RegForm">
-                            <input type="text" placeholder="Nom et Prénom" required>
+                            <input type="text" placeholder="Nom" required>
+                            <input type="text" placeholder=" Prénom " required>
                             <input type="email" placeholder="email" required>
                             <input type="password" placeholder="Mots de passe" required>
                             <button type="submit" class="btn">S'inscrire</button>
