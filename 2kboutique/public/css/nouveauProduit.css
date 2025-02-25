@@ -75,7 +75,7 @@
 .Your_Gadgets_Store,.trending_fashion_zone,.branded_deals, .sports_and_health, .brand_store, .best_selling_products, .deals_of_the_day, .prime_mall, .daily_essential, .festive_essential {
   width: 200px;
   display: flex;
-} 
+}
 .Your_Gadgets_Store p, .trending_fashion_zone p, .branded_deals p, .sports_and_health p, .brand_store p, .best_selling_products p, .deals_of_the_day p, .prime_mall p, .daily_essential p, .festive_essential p {
   margin-left: 10px;
   font-size: 14px;
@@ -83,7 +83,7 @@
 }
 .Your_Gadgets_Store img, .trending_fashion_zone img, .branded_deals img, .sports_and_health img, .brand_store img, .best_selling_products img, .budget_bazaar img, .deals_of_the_day img, .prime_mall img, .daily_essential img, .festive_essential img{
   margin-left: 25px;
-} 
+}
 #sportwidth{
   margin-left: 17%;
 }

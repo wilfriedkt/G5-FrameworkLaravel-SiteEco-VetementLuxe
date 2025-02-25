@@ -3,62 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Commande; // Assurez-vous d'avoir un modèle Commande
 
 class CommandeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Afficher toutes les commandes
     public function index()
     {
-        //
+        $commandes = Commande::all(); // Récupérer toutes les commandes
+        return view('commandes.index', compact('commandes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    // Afficher une commande spécifique
+    public function show($id)
     {
-        //
+        $commande = Commande::findOrFail($id); // Récupérer la commande par ID
+        return view('commandes.show', compact('commande'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    // Afficher l'historique des commandes
+    public function historique()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $historique = Commande::where('user_id', auth()->id())->get(); // Récupérer les commandes de l'utilisateur connecté
+        return view('commandes.historique', compact('historique'));
     }
 }

@@ -129,7 +129,7 @@ p{
 .col-2 img{
     max-width: 100%;
     padding: 50px 0;
-} 
+}
 
 .col-2 h1{
     font-size: 50px;
@@ -173,7 +173,7 @@ p{
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;
-    padding-right: 25px;   
+    padding-right: 25px;
 }
 .col-4{
     flex-basis: 25%;
@@ -394,7 +394,7 @@ ul li:hover {
 
 .menu-icon{
     width: 28px;
-    margin-left: 20px;  
+    margin-left: 20px;
     display:none;
 }
 
@@ -408,7 +408,7 @@ ul li:hover {
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;
-        
+
     }
     nav ul li{
         display: block;
@@ -419,7 +419,7 @@ ul li:hover {
     nav ul li a{
         color: #fff;
     }
-    .menu-icon{ 
+    .menu-icon{
         display:block;
         cursor: pointer;
     }
@@ -446,7 +446,7 @@ ul li:hover {
     .cart-info p{
         display: none;
     }
-    
+
 
 }
 

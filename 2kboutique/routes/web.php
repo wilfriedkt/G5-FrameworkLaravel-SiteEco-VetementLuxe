@@ -6,21 +6,76 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 //use Illuminate\Routing\AbstractRouteCollection;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+// Route d'accueil
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
-Route::get('/admin/ajoutProduit', function () {
-    return view('admin/ajoutProduit');
-});
 
+// Routes d'authentification
 Route::post('/inscription', [AuthController::class, 'inscription'])->name('inscription');
 Route::post('/connexion', [AuthController::class, 'connexion'])->name('connexion');
 Route::get('/deconnexion', [AuthController::class, 'deconnexion'])->name('deconnexion');
 Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name('delete.account')->middleware('auth');
+
+
+
+// Route pour afficher tous les produits
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+
+// Route pour afficher les produits pour femmes
+Route::get('/products_femme', function () {
+    return view('products_femme');
+});
+
+// Route pour afficher les produits pour hommes
+Route::get('/products_homme', function () {
+    return view('products_homme');
+});
+
+// Route pour afficher les détails d'un produit
+Route::get('/products_details', function () {
+    return view('products_details');
+});
+
+// Route pour le compte utilisateur
+Route::get('/account', function () {
+    return view('account');
+})->name('account');
+
+// Route pour le panier
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+// Route pour consulter une commande
+
+Route::get('/consulter_commande', function () {
+
+    return view('consulter_commande');
+
+});
+
+
+// Route pour l'historique des commandes
+
+Route::get('/historique_commandes', function () {
+
+    return view('historique_commandes');
+
+});
+
+
+// Route pour le suivi de commande
+
+Route::get('/suivie_commande', function () {
+
+    return view('suivie_commande');
+
+});
 
 
 //admin
@@ -30,3 +85,5 @@ Route::post('/admin/ajoutProduit', [ProduitController::class, 'ajoutProduit'])->
 // Afficher le formulaire (GET)
 Route::get('/admin/ajoutProduit', [ProduitController::class, 'affichFormProduit'])->name('admin.formAjoutProduit');
 
+
+?>
