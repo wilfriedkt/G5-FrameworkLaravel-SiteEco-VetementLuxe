@@ -1,126 +1,142 @@
-.item_store_div {
-  margin: 20px 10px 0px 10px;
-  height: 300px;
-  display: flex;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  overflow: scroll;
-}
-#budget_item_store {
-  height: 200px;
-}
-.item_store_div div {
-  width: 220px;
-}
-/* .Your_Gadgets_Store:hover {
-  border: 2px solid blue;
-  cursor: pointer;
-} */
-.item_store>h1 {
-  font-weight: 500;
-  font-size: 20px;
-  color: #212121;
-  margin-left: 10px;
-  margin-top: 40px;
-}
-.item_store_div img {
-  width: 145px;
-  margin-top: 25px;
-}
-.item_store_div h6 {
-  font-weight: 400;
-  font-size: 14px;
-  color: #757575;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-.price_div {
-  display: flex;
-  margin-top: 8px;
-}
-.fa-rupee-sign {
-  color: #757575;
-  margin-left: 10px;
-  font-size: 13px;
-}
+/* Style pour le conteneur des gadgets */
+/* Style pour le conteneur des gadgets */
+.Your_Gadgets_Store {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
 
-.final_price {
-  margin-left: 10px;
-  margin-top: -4px;
-  font-size: 20px;
-}
-.price_div p:nth-child(1),.price_div p:nth-child(2) {
-  font-size: 14px;
-  line-height: 0px;
-  color: #757575;
-  text-decoration: line-through;
-}
-.price_div p:nth-child(3) {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 0px;
-  color: black;
-  margin-top: 5.5%;
-}
-#price_divplusp {
-  color: #24a3b5;
-  font-weight: 500;
-}
-.dis {
-  font-size: 15px;
-  font-weight: 500px;
-  color: #24a3b5;
-  margin-top: 8px;
-}
-.Your_Gadgets_Store,.trending_fashion_zone,.branded_deals, .sports_and_health, .brand_store, .best_selling_products, .deals_of_the_day, .prime_mall, .daily_essential, .festive_essential {
-  width: 200px;
-  display: flex;
-}
-.Your_Gadgets_Store p, .trending_fashion_zone p, .branded_deals p, .sports_and_health p, .brand_store p, .best_selling_products p, .deals_of_the_day p, .prime_mall p, .daily_essential p, .festive_essential p {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #757575;
-}
-.Your_Gadgets_Store img, .trending_fashion_zone img, .branded_deals img, .sports_and_health img, .brand_store img, .best_selling_products img, .budget_bazaar img, .deals_of_the_day img, .prime_mall img, .daily_essential img, .festive_essential img{
-  margin-left: 25px;
-}
-#sportwidth{
-  margin-left: 17%;
-}
-.marleft {
-  padding-left: 15%;
-}
-#sportwidth img{
-  height: 170px;
-}
-#marbtm {
-  margin-bottom: 5%;
-}
-.festive_essential {
-  text-align: center;
-}
-.budget_bazaar {
-  width: 250px;
-  display: flex;
-}
-.budget_bazaar:hover{
-  opacity: 75%;
-}
-.budget_bazaar img {
-  width: 230px;
-  margin-left: 100px;
-}
-#bestsell {
-  margin-left: -105%;
-}
-.Your_Gadgets{
-  display: flex;
-}
+  }
 
-.imagedivofGadget {
-  border: 1px solid red;
-}
+  /* Style pour chaque élément de gadget */
+  .gadget-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    text-align: center;
+  }
 
-.nameofpro {
-  line-height: 0%;
-}
+  /* Effet au survol des gadgets */
+  .gadget-item:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Style pour l'image du gadget */
+  .gadget-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+
+  /* Changer l'échelle de l'image au survol */
+  .gadget-item:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Style pour le nom du gadget */
+  .nameofpro {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+  }
+
+  /* Style pour les prix */
+  .price_div p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+  }
+
+  /* Style pour le prix barré */
+  .price_div p:first-child {
+    text-decoration: line-through;
+    color: #888;
+  }
+
+  /* Style pour le prix actuel */
+  .price_div p:nth-child(2) {
+    color: #28a745;
+    font-weight: bold;
+  }
+
+  /* Style pour le texte de la réduction */
+  .discount {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+
+
+
+ /* Styles pour les produits de mode tendance */
+.fashion-item {
+    width: 250px;
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .fashion-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .fashion-item-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .fashion-item-name {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .fashion-price-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .fashion-price-original {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.1em;
+  }
+
+  .fashion-price-discounted {
+    color: #e74c3c;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .fashion-price-final {
+    font-size: 1.2em;
+    color: #2ecc71;
+  }
+
+  .fashion-discount {
+    color: #e67e22;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1em;
+  }

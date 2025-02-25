@@ -1,154 +1,75 @@
+// Données des gadgets
 var gadget_store_data = [
-  {
-<<<<<<< HEAD
-    img: "https://cdn.shopclues.com/images1/thumbnails/99370/200/200/145508146-99370521-1634810951.jpg",
-    name: "i7S TWS Twins Wireless In t...",
-    p1: "379",
-    p2: "2999",
-    p3: "342",
-    dis: "88% off",
-=======
+    {
       img: "https://cdn.shopclues.com/images1/thumbnails/99370/200/200/145508146-99370521-1634810951.jpg",
       name: "i7S TWS Twins Wireless In t...",
-      p1: "379",
-      p2: "2999",
-      p3: "342",
+      p1: "de 2999",
+      p2: "à 299",
       dis: "88% off",
->>>>>>> b1e970bacd631bfcbdf06ad690e30c28df3f611f
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/95357/200/200/142826933-95357827-1606398228.jpg",
-    name: "HBS-730 In the Ear Bluetoot...",
-    p1: "329",
-    p2: "1099",
-    p3: "294",
-    dis: "73% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/81476/200/200/135627858-81476269-1619845151.jpg",
-    name: "MTR MT310 Dual Sim Featu...",
-    p1: "749",
-    p2: "999",
-    p3: "693",
-    dis: "30% off",
-  },
-<<<<<<< HEAD
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/112883/200/200/151860087-112883707-1625898295.jpg",
-    name: "Innotek Mini K1 Universal W...",
-    p1: "149",
-    p2: "599",
-    p3: "123",
-    dis: "79% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/98012/200/200/144475154-98012302-1584693159.jpg",
-    name: "Refurbished Nokia 1100 Bla...",
-    p1: "1199",
-    p2: "1999",
-    p3: "1045",
-    dis: "47% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/112883/200/200/151860087-112883707-1625898295.jpg",
-    name: "Innotek Mini K1 Universal W...",
-    p1: "149",
-    p2: "599",
-    p3: "123",
-    dis: "79% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/98012/200/200/144475154-98012302-1584693159.jpg",
-    name: "Refurbished Nokia 1100 Bla...",
-    p1: "1199",
-    p2: "1999",
-    p3: "1045",
-    dis: "47% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/105068/200/200/149071836-105068393-1582034843.jpg",
-    name: "Raptech Compatible Micro...",
-    p1: "189",
-    p2: "999",
-    p3: "161",
-    dis: "83% off",
-  },
-  {
-    img: "https://cdn.shopclues.com/images1/thumbnails/102529/200/200/147616538-102529620-1584606292.jpg",
-    name: "3 meter long Universal mobi...",
-    p1: "179",
-    p2: "799",
-    p3: "158",
-    dis: "80% off",
-  },
-];
+    },
+    {
+      img: "https://cdn.shopclues.com/images1/thumbnails/95357/200/200/142826933-95357827-1606398228.jpg",
+      name: "HBS-730 In the Ear Bluetoot...",
+      p1: "de 2999",
+      p2: "à 299",
+      dis: "88% off",
+    },
+    {
+      img: "https://cdn.shopclues.com/images1/thumbnails/81476/200/200/135627858-81476269-1619845151.jpg",
+      name: "MTR MT310 Dual Sim Featu...",
+      p1: "de 2999",
+      p2: "à 299",
+      dis: "88% off",
+    },
+  ];
 
-gadget_store_data.map(function (data) {
-  let main_div = document.createElement("div");
+  // Fonction pour créer les éléments d'affichage des gadgets
+  function createGadgetElements() {
+    // Sélectionne le conteneur où les gadgets doivent être ajoutés
+    const gadgetsContainer = document.querySelector(".Your_Gadgets_Store");
 
-  let img = document.createElement("img");
-  img.src = data.img;
+    // Parcourt les données des gadgets
+    gadget_store_data.forEach(function (item) {
+      // Création du conteneur principal pour chaque gadget
+      let mainDiv = document.createElement("div");
+      mainDiv.classList.add("gadget-item"); // Ajout d'une classe pour le style (facultatif)
 
-  let name = document.createElement("p");
-  name.innerText = data.name;
-  name.setAttribute("class", "nameofpro");
-
-  let price_div = document.createElement("div");
-
-  let p1 = document.createElement("p");
-  p1.textContent = `₹${data.p1}`;
-
-  let p2 = document.createElement("p");
-  p2.textContent = `₹${data.p2}`;
-
-  let p3 = document.createElement("p");
-  p3.textContent = `₹${data.p3}`;
-
-  price_div.append(p1, p2, p3);
-  price_div.setAttribute("class", "price_div");
-
-  let dis = document.createElement("p");
-  dis.innerText = data.dis;
-  dis.setAttribute("id", "price_divplusp");
-  main_div.append(img, name, price_div, dis);
-  document.querySelector(".Your_Gadgets_Store").append(main_div);
-});
-=======
-];
-
-function createGadgetElements() {
-  gadget_store_data.forEach(function (item) {
-      let main_div = document.createElement("div");
-
+      // Création de l'image
       let img = document.createElement("img");
       img.src = item.img;
+      img.alt = item.name; // Ajout d'un texte alternatif pour l'image
 
+      // Création du nom du produit
       let name = document.createElement("p");
       name.innerText = item.name;
-      name.setAttribute("class", "nameofpro");
+      name.classList.add("nameofpro"); // Classe pour le style
 
-      let price_div = document.createElement("div");
-      price_div.setAttribute("class", "price_div");
+      // Création du conteneur des prix
+      let priceDiv = document.createElement("div");
+      priceDiv.classList.add("price_div"); // Classe pour le style
 
+      // Création des prix individuels
       let p1 = document.createElement("p");
-      p1.textContent = `${item.p1}FCFA`;
+      p1.textContent = `${item.p1} FCFA`;
 
       let p2 = document.createElement("p");
-      p2.textContent = `${item.p2}FCFA`;
+      p2.textContent = `${item.p2} FCFA`;
 
-      let p3 = document.createElement("p");
-      p3.textContent = `${item.p3}FCFA`;
+      // Ajout des prix dans le conteneur de prix
+      priceDiv.append(p1, p2);
 
-      price_div.append(p1, p2, p3);
-
+      // Création du texte de la réduction
       let dis = document.createElement("p");
       dis.innerText = item.dis;
-      dis.setAttribute("id", "price_divplusp");
+      dis.classList.add("discount"); // Classe pour le style
 
-      main_div.append(img, name, price_div, dis);
-      document.querySelector(".Your_Gadgets_Store").append(main_div);
-  });
-}
+      // Ajout des éléments dans le conteneur principal
+      mainDiv.append(img, name, priceDiv, dis);
 
-createGadgetElements();
->>>>>>> b1e970bacd631bfcbdf06ad690e30c28df3f611f
+      // Ajout du gadget dans le conteneur de gadgets
+      gadgetsContainer.append(mainDiv);
+    });
+  }
+
+  // Appel de la fonction pour afficher les éléments
+  createGadgetElements();

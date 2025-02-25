@@ -127,9 +127,17 @@ p{
     min-width: 300px;
 }
 .col-2 img{
-    max-width: 100%;
-    padding: 50px 0;
+    max-width: 70%;
+    max-height: auto;
+    margin-left: 75px;
+    border-radius: 20px;
 }
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
 
 .col-2 h1{
     font-size: 50px;
@@ -178,12 +186,18 @@ p{
 .col-4{
     flex-basis: 25%;
     padding: 10px;
-    min-width: 200px;
+    min-width: 250px;
     margin-bottom: 50px;
     transition: transform 0.5s;
+    object-fit: cover; /* Permet de recadrer l'image pour qu'elle couvre l'espace sans déborder */
 }
 .col-4 img{
-    width:100%;
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Maintient le ratio de l'image */
+    object-fit: cover; /* Permet de recadrer l'image pour qu'elle couvre l'espace sans déborder */
+    border-radius: 8px; /* Optionnel : pour arrondir les coins des images */
+    display: block; /* Enlève l'espace sous l'image */
+    margin-bottom: 10px; /* Espace sous l'image */
 }
 .title{
     text-align: center;
@@ -192,16 +206,10 @@ p{
     line-height: 60px;
     color: #555;
 }
-.title::after{
-    content: '';
-    background: #14b7d8;
-    width: 80px;
-    height: 5px;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    transform: translateX(-50%);
+
+
+.sous-titre{
+    margin-left: 25px;
 }
 h4{
     color: #555;

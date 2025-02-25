@@ -13,8 +13,10 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        //
+        $produits = Produit::all(); // Récupère tous les produits
+        return view('index', compact('produits'));
     }
+
 
     // Afficher le formulaire pour ajouter un produit
     public function affichFormProduit()

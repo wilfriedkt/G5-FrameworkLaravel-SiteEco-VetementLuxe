@@ -1,16 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProduitController;
+    use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 //use Illuminate\Routing\AbstractRouteCollection;
 
 
 // Route d'accueil
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [ProduitController::class, 'index'])->name('index');
 
 
 // Routes d'authentification
