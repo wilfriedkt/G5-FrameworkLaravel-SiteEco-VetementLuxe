@@ -22,38 +22,38 @@ Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name
 // Route pour afficher tous les produits
 Route::get('/products', function () {
     return view('products');
-})->name('products');
+})->name('user.products');
 
 // Route pour afficher les produits pour femmes
 Route::get('/products_femme', function () {
-    return view('products_femme');
+    return view('user.products_femme');
 });
 
 // Route pour afficher les produits pour hommes
 Route::get('/products_homme', function () {
-    return view('products_homme');
+    return view('user.products_homme');
 });
 
 // Route pour afficher les détails d'un produit
 Route::get('/products_details', function () {
-    return view('products_details');
+    return view('user.products_details');
 });
 
 // Route pour le compte utilisateur
 Route::get('/account', function () {
-    return view('account');
+    return view('user.account');
 })->name('account');
 
 // Route pour le panier
 Route::get('/cart', function () {
-    return view('cart');
+    return view('uer.cart');
 });
 
 // Route pour consulter une commande
 
 Route::get('/consulter_commande', function () {
 
-    return view('consulter_commande');
+    return view('user.consulter_commande');
 
 });
 
@@ -62,7 +62,7 @@ Route::get('/consulter_commande', function () {
 
 Route::get('/historique_commandes', function () {
 
-    return view('historique_commandes');
+    return view('user.historique_commandes');
 
 });
 
@@ -71,7 +71,7 @@ Route::get('/historique_commandes', function () {
 
 Route::get('/suivie_commande', function () {
 
-    return view('suivie_commande');
+    return view('user.suivie_commande');
 
 });
 

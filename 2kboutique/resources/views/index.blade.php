@@ -31,12 +31,13 @@
                         <li class="submenu">
                             <a href="#">Vêtements</a>
                             <ul class="dropdown">
-                                <li><a href="products_homme.html">Hommes</a></li>
-                                <li><a href="products_femme.html">Femmes</a></li>
+                                <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
+                                <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
+
                             </ul>
                         </li>
-                        <li><a href="#">Commandes</a></li>
-                        <li><a href="account.html">S'inscrire/Se connecter</a></li>
+                        <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
+                        <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                     </ul>
                 </nav>
                 <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
