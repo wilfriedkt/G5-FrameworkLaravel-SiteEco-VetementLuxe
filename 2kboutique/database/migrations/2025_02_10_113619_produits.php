@@ -9,18 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('produits', function (Blueprint $table) {
-            $table->id('idProduit');
-            $table->string('nom', 100);
+            $table->id();
+            $table->string('nom');
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->decimal('prix', 10, 2);
             $table->integer('stock');
-            $table->foreignId('idTypeProduit')->constrained('types_produits', 'idTypeProduit')->onDelete('cascade');
+            $table->timestamps();
         });
-        
     }
+
 
     /**
      * Reverse the migrations.
