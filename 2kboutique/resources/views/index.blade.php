@@ -29,7 +29,7 @@
                     <ul id="MenuItems">
                         <li><a href="index.html">Accueil</a></li>
                         <li class="submenu">
-                            <a href="#">Vêtements</a>
+                            <a href="{{ url('/products') }}">Vêtements</a>
                             <ul class="dropdown">
                                 <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
                                 <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
@@ -49,7 +49,7 @@
                     <p>Plongez dans un univers où raffinement et tendance se rencontrent. Notre boutique vous propose une selection exclusive de vetements de luxe
                         pour hommes et femmes, alliant qualité exceptionnelle et design intemporel.
                     </p>
-                    <a href="products.html" class="btn">Explore maintenant &#8594;</a>
+                    <a href="{{ url('/products') }}" class="btn">Explore maintenant &#8594;</a>
                 </div>
                 <div class="col-2">
                     <img src="{{ asset('images/gallery-2.jpg') }}" style="margin-left: 80px;" alt="Accueil">
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <br><br>
+    <br>
 
 
         <!------------------------------ featured Products------------------------------>
@@ -71,6 +71,7 @@
                     <script src="{{ asset('js/gadget_store_data.js') }}" defer></script>
                 </div>
                 </div>
+                <br>
                 <h2 class="sous-titre">Pour les femmes</h2>
                 <div class="item_store_div">
                 <div class="trending_fashion_zone">
@@ -141,6 +142,7 @@
                 <div class="row">
                     @forelse ($produits as $produit)
                         <div class="col-4">
+
                             <a href="products-details.html">
                                 <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->nom }}">
                             </a>

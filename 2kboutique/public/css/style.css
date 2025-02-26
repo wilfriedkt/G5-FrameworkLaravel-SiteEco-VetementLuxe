@@ -195,7 +195,7 @@ p{
     width: 100%; /* L'image prend toute la largeur de son conteneur */
     height: auto; /* Maintient le ratio de l'image */
     object-fit: cover; /* Permet de recadrer l'image pour qu'elle couvre l'espace sans déborder */
-    border-radius: 8px; /* Optionnel : pour arrondir les coins des images */
+    /*border-radius: 8px;  Optionnel : pour arrondir les coins des images */
     display: block; /* Enlève l'espace sous l'image */
     margin-bottom: 10px; /* Espace sous l'image */
 }

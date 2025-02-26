@@ -21,8 +21,8 @@ Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name
 
 // Route pour afficher tous les produits
 Route::get('/products', function () {
-    return view('products');
-})->name('user.products');
+    return view('user.products');
+})->name('products');
 
 // Route pour afficher les produits pour femmes
 Route::get('/products_femme', function () {
@@ -46,7 +46,7 @@ Route::get('/account', function () {
 
 // Route pour le panier
 Route::get('/cart', function () {
-    return view('uer.cart');
+    return view('user.cart');
 });
 
 // Route pour consulter une commande
