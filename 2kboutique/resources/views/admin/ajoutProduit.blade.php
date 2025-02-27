@@ -50,7 +50,7 @@
             color: var(--secondary-color);
         }
 
-        .form-step input, .form-step textarea {
+        .form-step input, .form-step textarea, .form-step select {
             border: 2px solid #e9ecef;
             border-radius: 8px;
             padding: 0.8rem;
@@ -126,6 +126,14 @@
                 <div class="form-step">
                     <label for="stock">Stock</label>
                     <input type="number" id="stock" name="stock" min="0" placeholder="Quantité en stock (en Tonne)" required>
+                </div>
+
+                <div class="form-step">
+                    <label for="type">Type de produit :</label>
+                    <select name="type" required>
+                        <option value="Nouveau Produit">Nouveau Produit</option>
+                        <option value="Produit Phare">Produit Phare</option>
+                    </select>
                 </div>
 
                 <div class="form-step">

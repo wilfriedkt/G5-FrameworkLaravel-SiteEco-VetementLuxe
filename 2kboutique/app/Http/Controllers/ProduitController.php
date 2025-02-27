@@ -13,9 +13,13 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        $produits = Produit::all(); // Récupère tous les produits
-        return view('index', compact('produits'));
+        // Récupérer les produits en fonction du type
+        $produitsPhares = Produit::where('type', 'Produit Phare')->get();
+        $nouveauxProduits = Produit::where('type', 'Nouveau Produit')->get();
+
+        return view('index', compact('produitsPhares', 'nouveauxProduits'));
     }
+
 
 
     // Afficher le formulaire pour ajouter un produit
@@ -37,6 +41,7 @@ class ProduitController extends Controller
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:5120', // // Limite à 5 Mo
             'prix' => 'required|numeric|min:1',
             'stock' => 'required|integer|min:0',
+            'type' => 'required|in:Produit Phare,Nouveau Produit',
         ]);
 
         // Gestion de l'image (si un fichier est téléchargé)
@@ -52,6 +57,7 @@ class ProduitController extends Controller
             'image' => $imagePath,
             'prix' => $request->prix,
             'stock' => $request->stock,
+            'type' => $request->type,
         ]);
 
         // Redirection après ajout

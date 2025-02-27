@@ -52,7 +52,7 @@
                     <a href="{{ url('/products') }}" class="btn">Explore maintenant &#8594;</a>
                 </div>
                 <div class="col-2">
-                    <img src="{{ asset('images/gallery-2.jpg') }}" style="margin-left: 80px;" alt="Accueil">
+                    <img class="img-acceuille" src="{{ asset('images/gallery-2.jpg') }}" style="margin-left: 80px;" alt="Accueil">
                 </div>
             </div>
         </div>
@@ -83,140 +83,54 @@
 
             <hr>
 
-            <h1 class="title" >Produits phares</h1>
-                <div class="row">
+            <h1 class="title">Produits phares</h1>
+            <div class="row">
+                @forelse ($produitsPhares as $produit)
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/gucci1.png"></a>
-                        <a href="products-details.html"><h4>Gucci - Modèle ‎823832 XJG7Z 1152</h4></a>
+                        <a href="{{ url('products_details/' . $produit->id) }}">
+                            <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->nom }}">
+                        </a>
+                        <h4>{{ $produit->nom }}</h4>
                         <div class="rating">
-                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
                         </div>
-                        <p>10.000 FCFA</p>
+                        <p>{{ number_format($produit->prix, 0, ',', '.') }} FCFA</p>
                     </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/gucci2.png"></a>
-                        <h4>Gucci - Modèle ‎789582 XJGUL 5728</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>8.500 FCFA</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/nike1.png"></a>
-                        <h4>Nike - Chicago Bulls Courtside</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>25.000 FCFA</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/adidas1.png"></a>
-                        <h4>Adidas - Veste de survêtement</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>22.000 FCFA</p>
-                    </div>
-                </div>
-
-                <hr>
-
-                <h1 class="title">Nouveaux produits</h1>
-                <div class="row">
-                    @forelse ($produits as $produit)
-                        <div class="col-4">
-
-                            <a href="products-details.html">
-                                <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->nom }}">
-                            </a>
-                            <h4>{{ $produit->nom }}</h4>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <p>{{ number_format($produit->prix, 0, ',', '.') }} FCFA</p>
-                        </div>
-                    @empty
-                        <p>Aucun produit disponible.</p>
-                    @endforelse
-                </div>
-
-
-
-
-            <!--new row for the latest product-->
-                <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>HRX cotton socks</h4>
-                        <div class="rating">
-                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>25.000 FCFA</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-12.jpg"></a>
-                        <h4>Flat Lace-Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>26.000 FCFA</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Loafers Men (Gray)</h4>
-                        <div class="rating">
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>15.000 FCFA</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-12.jpg"></a>
-                        <h4>Lace-Fastening white Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>21.000 FCFA</p>
-                    </div>
-                </div>
+                @empty
+                    <p>Aucun produit phare disponible.</p>
+                @endforelse
             </div>
+
+
+            <hr>
+
+            <h1 class="title">Nouveaux produits</h1>
+            <div class="row">
+                @forelse ($nouveauxProduits as $produit)
+                    <div class="col-4">
+                        <a href="{{ url('products_details/' . $produit->id) }}">
+                            <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->nom }}">
+                        </a>
+                        <h4>{{ $produit->nom }}</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p>{{ number_format($produit->prix, 0, ',', '.') }} FCFA</p>
+                    </div>
+                @empty
+                    <p>Aucun nouveau produit disponible.</p>
+                @endforelse
+            </div>
+
+        </div>
 
         <!--------------------------`   offer   --------------------------------->
         <div class="offer">
