@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-    use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\DetailProduitController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 //use Illuminate\Routing\AbstractRouteCollection;
@@ -38,6 +39,8 @@ Route::get('/products_homme', function () {
 Route::get('/products_details', function () {
     return view('user.products_details');
 });
+
+Route::get('/products_details/{id}', [DetailProduitController::class, 'detailProduit'])->name('produits.details');
 
 // Route pour le compte utilisateur
 Route::get('/account', function () {

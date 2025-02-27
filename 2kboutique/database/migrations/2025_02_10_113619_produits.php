@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->decimal('prix', 10, 2);
             $table->integer('stock');
+            $table->enum('type', ['Produit Phare', 'Nouveau Produit'])->default('Nouveau Produit');
             $table->timestamps();
         });
     }
