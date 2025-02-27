@@ -19,26 +19,20 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="{{ url('index') }}">Accueil</a></li>
+                    <li><a href="{{ url('/') }}"">Accueil</a></li>
                     <li class="submenu">
-                        <a href="#">Vêtements</a>
+                        <a href="{{ url('/products') }}">Vêtements</a>
                         <ul class="dropdown">
-                            <li><a href="{{ url('products_homme') }}">Hommes</a></li>
-                            <li><a href="{{ url('products_femme') }}">Femmes</a></li>
+                            <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
+                            <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
+
                         </ul>
                     </li>
-                    
-                    <li class="submenu">
-                        <a href="#">Commandes</a>
-                        <ul class="dropdown">
-                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\suivie_commande.blade.php') }}">Suivie de commande</a></li>
-                            <li><a href="{{ url('C:\Users\ygsor\laravel\G5-FrameworkLaravel-SiteEco-VetementLuxe\2kboutique\resources\views\commandes\historique_commandes.blade.php') }}">Historique de commande</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
+                    <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
+                    <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
-            <a href="{{ url('cart') }}">
+            <a href="{{ url('/cart') }}">
                 <img src="{{ asset('images/cart.png') }}" width="30px" height="30px">
             </a>
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
