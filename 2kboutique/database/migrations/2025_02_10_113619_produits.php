@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('prix', 10, 2);
             $table->integer('stock');
             $table->enum('type', ['Produit Phare', 'Nouveau Produit'])->default('Nouveau Produit');
+            $table->enum('genre',['femme', 'homme'])->default('femme');
             $table->timestamps();
         });
     }

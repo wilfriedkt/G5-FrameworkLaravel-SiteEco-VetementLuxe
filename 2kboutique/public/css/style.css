@@ -130,13 +130,13 @@ p{
 .col-2 .img-acceuille{
     max-width: 70%;
     max-height: auto;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .col-2 .img-detail{
     max-width: 100%;
     max-height: auto;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .col-2 h1{
@@ -172,6 +172,10 @@ p{
 .header{
     background: radial-gradient(#fff, #d3ecff);
 }
+
+.bodyAll, #header{
+    background: radial-gradient(#fff, #f3faff);
+}
 .header .row{
     margin-top: 70px;
 }
@@ -199,15 +203,18 @@ p{
     flex-basis: 30%;
     padding: 10px;
     min-width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     margin-bottom: 50px;
     transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     object-fit: cover; /* Permet de recadrer l'image pour qu'elle couvre l'espace sans déborder */
 }
 .col-4 img{
     width: 100%; /* L'image prend toute la largeur de son conteneur */
     height: auto; /* Maintient le ratio de l'image */
     object-fit: cover; /* Permet de recadrer l'image pour qu'elle couvre l'espace sans déborder */
-    /*border-radius: 8px;  Optionnel : pour arrondir les coins des images */
+    border-radius: 5px;  /*Optionnel : pour arrondir les coins des images */
     display: block; /* Enlève l'espace sous l'image */
     margin-bottom: 10px; /* Espace sous l'image */
 }
@@ -505,7 +512,7 @@ select:focus{
 /*-----------------------single product details -----------------------*/
 
 .single-product{
-    margin-top: 80px;
+    margin-top: 5px;
 }
 .single-product .col-2 img{
     padding:0;

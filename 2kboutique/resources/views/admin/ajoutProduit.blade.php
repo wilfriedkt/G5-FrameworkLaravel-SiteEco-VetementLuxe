@@ -137,6 +137,14 @@
                 </div>
 
                 <div class="form-step">
+                    <label for="genre">Produit pour :</label>
+                    <select name="genre" required>
+                        <option value="femme">femme</option>
+                        <option value="homme">homme</option>
+                    </select>
+                </div>
+
+                <div class="form-step">
                     <label for="image">Image du produit</label>
                     <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png">
                 </div>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class="bodyAll">
     <div class="container">
         <div class="navbar">
             <div class="logo">
@@ -25,17 +25,18 @@
                 <ul id="MenuItems">
                     <li><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="submenu">
-                        <a href="#">Vêtements</a>
+                        <a href="{{ url('/products') }}">Vêtements</a>
                         <ul class="dropdown">
-                            <li><a href="{{ url('products_homme') }}">Hommes</a></li>
-                            <li><a href="{{ url('products_femme') }}">Femmes</a></li>
+                            <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
+                            <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
+
                         </ul>
                     </li>
-                    <li><a href="{{ url('account') }}">Commandes</a></li>
-                    <li><a href="{{ url('account') }}">S'inscrire/Se connecter</a></li>
+                    <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
+                    <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                 </ul>
             </nav>
-            <a href="{{ url('cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
+            <a href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
 
             <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
         </div>
@@ -47,7 +48,7 @@
 
     <div class="small-container">
         <div class="row row-2">
-            <h2>Tous les produits</h2>
+            <h2 class="sous-titre">Tous les produits</h2>
             <select>
                 <option>Tri par défaut</option>
                 <option>Trier par prix</option>
@@ -58,11 +59,12 @@
         </div>
 
         <div class="row">
+            @forelse ($allProduits as $produit)
             <div class="col-4">
-                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-11.jpg') }}"></a>
-                <a href="{{ url('products-details') }}">
-                    <h4>Downshifter Sports Shoes</h4>
+                <a href="{{ url('products_details/' . $produit->id) }}">
+                    <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->nom }}">
                 </a>
+                <h4>{{ $produit->nom }}</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -70,44 +72,11 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>5.000 FCFA</p>
+                <p>{{ number_format($produit->prix, 0, ',', '') }} FCFA</p>
             </div>
-            <div class="col-4">
-                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-2.jpg') }}"></a>
-                <h4>Flat Lace-Fastening Shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                </div>
-                <p>5.000 FCFA</p>
-            </div>
-            <div class="col-4">
-                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-3.jpg') }}"></a>
-                <h4>Lace Fastening Shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>5.000 FCFA</p>
-            </div>
-            <div class="col-4">
-                <a href="{{ url('products-details') }}"><img src="{{ asset('images/product-10.jpg') }}"></a>
-                <h4>Flat Lace-Fastening Shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>5.000 FCFA</p>
-            </div>
+            @empty
+                <p>Aucun produit pour homme n'est disponible.</p>
+            @endforelse
         </div>
 
         <div class="page-btn">

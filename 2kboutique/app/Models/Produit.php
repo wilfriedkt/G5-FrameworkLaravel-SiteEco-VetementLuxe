@@ -17,6 +17,7 @@ class Produit extends Model
         'prix',
         'stock',
         'type',
+        'genre',
     ];
 }
 

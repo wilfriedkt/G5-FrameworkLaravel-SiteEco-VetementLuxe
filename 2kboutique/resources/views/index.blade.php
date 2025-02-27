@@ -18,7 +18,7 @@
     ></script>
 
     </head>
-    <body>
+    <body class="bodyAll">
         <div class ="header">
         <div class="container">
             <div class="navbar">
@@ -27,7 +27,7 @@
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="{{ url('/') }}">Accueil</a></li>
                         <li class="submenu">
                             <a href="{{ url('/products') }}">Vêtements</a>
                             <ul class="dropdown">
@@ -40,7 +40,7 @@
                         <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <a href="{{ url('/cart') }}"><img src="images/cart.png" width="30px" height="30px"></a>
                 <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()" alt="Menu">
             </div>
             <div class="row" style="margin-left: 50px;">
@@ -98,7 +98,7 @@
                             <i class="fa fa-star-half-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <p>{{ number_format($produit->prix, 0, ',', '.') }} FCFA</p>
+                        <p>{{ number_format($produit->prix, 0, ',', '') }} FCFA</p>
                     </div>
                 @empty
                     <p>Aucun produit phare disponible.</p>
@@ -123,7 +123,7 @@
                             <i class="fa fa-star-half-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <p>{{ number_format($produit->prix, 0, ',', '.') }} FCFA</p>
+                        <p>{{ number_format($produit->prix, 0, ',', '') }} FCFA</p>
                     </div>
                 @empty
                     <p>Aucun nouveau produit disponible.</p>
