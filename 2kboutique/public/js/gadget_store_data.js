@@ -1,21 +1,21 @@
 // Données des gadgets
 var gadget_store_data = [
     {
-      img: "https://cdn.shopclues.com/images1/thumbnails/99370/200/200/145508146-99370521-1634810951.jpg",
+      img: "images/gallery-2.jpg",
       name: "i7S TWS Twins Wireless In t...",
       p1: "de 2999",
       p2: "à 299",
       dis: "88% off",
     },
     {
-      img: "https://cdn.shopclues.com/images1/thumbnails/95357/200/200/142826933-95357827-1606398228.jpg",
+      img: "images/gallery-3.jpg",
       name: "HBS-730 In the Ear Bluetoot...",
       p1: "de 2999",
       p2: "à 299",
       dis: "88% off",
     },
     {
-      img: "https://cdn.shopclues.com/images1/thumbnails/81476/200/200/135627858-81476269-1619845151.jpg",
+      img: "images/gallery-1.jpg",
       name: "MTR MT310 Dual Sim Featu...",
       p1: "de 2999",
       p2: "à 299",

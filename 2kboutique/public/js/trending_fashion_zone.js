@@ -1,7 +1,21 @@
 // Données de la zone de mode tendance
 var trending_fashion_zone_data = [
     {
-      img: "https://cdn.shopclues.com/images/thumbnails/78529/200/200/123783677womensvnecksleevelesschiffonpromdress1500360679.jpg",
+      img: "images/gallery-2.jpg",
+      name: "Westchic Plain Black Georg...",
+      p1: "de 900",
+      p2: "à 437",
+      dis: "66% off",
+    },
+    {
+      img: "images/gallery-3.jpg",
+      name: "Westchic Plain Black Georg...",
+      p1: "de 900",
+      p2: "à 437",
+      dis: "66% off",
+    },
+    {
+      img: "images/gallery-1.jpg",
       name: "Westchic Plain Black Georg...",
       p1: "de 900",
       p2: "à 437",

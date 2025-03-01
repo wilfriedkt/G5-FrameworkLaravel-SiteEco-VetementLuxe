@@ -55,9 +55,24 @@ nav ul li a:focus {
 .submenu {
     position: relative;
 }
+/* Style for the dropdown (submenu) */
+.submenu-one {
+    position: relative;
+}
 
 /* Dropdown menu (hidden by default) */
 .dropdown {
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -35px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+/* Dropdown menu (hidden by default) */
+.dropdown-one {
     border-radius: 15px;
     display: none;
     position: absolute;
@@ -87,6 +102,25 @@ nav ul li a:focus {
 .dropdown li a:hover {
     color: #14b7d8;
 }
+/* Display the dropdown when hovering over the parent item */
+.submenu-one:hover .dropdown-one {
+    display: block;
+}
+
+/* Dropdown items styling */
+.dropdown-one li {
+    padding: 0px;
+    width: 110px;
+}
+
+.dropdown-one li a {
+    color: #555;
+    display: block;
+}
+
+.dropdown-one li a:hover {
+    color: #14b7d8;
+}
 
 /* Responsiveness for mobile devices */
 @media (max-width: 768px) {
@@ -102,6 +136,10 @@ nav ul li a:focus {
 
     /* Adjust the dropdown for smaller screens */
     .submenu .dropdown {
+        position: relative;
+    }
+    /* Adjust the dropdown for smaller screens */
+    .submenu .dropdown-one {
         position: relative;
     }
 }
@@ -557,7 +595,7 @@ input:focus{
 
 
 
-        /*------------------------------ cart items ------------------------------*/
+        /*------------------------------ cart, listeUser and listeProduit items ------------------------------*/
 .cart-page{
     margin: 80px auto;
 }
@@ -578,6 +616,11 @@ th{
     background: #14b7d8;
     font-weight: normal;
 }
+
+.th-user{
+    background-color: #e8860e;
+}
+
 td{
     padding: 10px 5px;
 }
@@ -604,11 +647,20 @@ td img{
     width: 100%;
     max-width: 400px;
 }
+
+.total-price .total-user{
+    border-top: 3px solid #e8860e;
+}
+
 td:last-child{
     text-align: right;
 }
 th:last-child{
     text-align: right;
+}
+
+.bouton-modifie{
+    color: #e8860e;
 }
 
 

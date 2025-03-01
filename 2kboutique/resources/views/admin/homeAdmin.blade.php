@@ -23,25 +23,47 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="images/logo_2kboutique.png" width="100px" height="60px"></a>
+                    <a href="{{ url('/admin') }}"><img src="images/logo_2kboutique.png" width="100px" height="60px"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="{{ url('/') }}">Accueil</a></li>
                         <li class="submenu">
-                            <a href="{{ url('/products') }}">Vêtements</a>
+                            <a href="{{ url('/') }}">Espace Utilisateur</a>
                             <ul class="dropdown">
-                                <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
-                                <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
+                                <li><a href="{{ url('/') }}">Accueil</a></li>
+                                <li class="submenu-one">
+                                    <a href="{{ url('/products') }}">Vêtements</a>
+                                    <ul class="dropdown-one">
+                                        <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
+                                        <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
 
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
-                        <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
+                        <li class="submenu">
+                            <a href="{{ url('/admin/produit/listeProduit') }}">Gestion Produit</a>
+                            <ul class="dropdown">
+                                <li><a href="{{ url('/admin/produit/listeProduit') }}">Tout les Produits</a></li>
+                                <li><a href="{{ url('/admin/produit/ajoutProduit') }}">Ajouter</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="{{ url('/admin/produit/listeProduit') }}">Gestion Commandes</a>
+                            <ul class="dropdown">
+                                <li><a href="{{ url('/admin/produit/listeProduit') }}">Nouvelles C.</a></li>
+                                <li><a href="{{ url('/admin/produit/ajoutProduit') }}">C. validées</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="{{ url('/admin/user/listeUser') }}">Gestion User</a>
+                            <ul class="dropdown">
+                                <li><a href="{{ url('admin/user/listeUser') }}">Liste user</a></li>
+                                <li><a href="{{ url('/admin/produit/ajoutProduit') }}">Ajouter</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
-                <a href="{{ url('/cart') }}"><img src="images/cart.png" width="30px" height="30px"></a>
-                <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()" alt="Menu">
             </div>
             <div class="row" style="margin-left: 50px;">
                 <div class="col-2">

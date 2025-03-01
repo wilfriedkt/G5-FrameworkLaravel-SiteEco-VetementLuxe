@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\DetailProduitController;
+use App\Http\Controllers\UtilisateurController;
+use App\Http\Controllers\AdministrateurController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 //use Illuminate\Routing\AbstractRouteCollection;
@@ -65,11 +67,22 @@ Route::get('/suivie_commande', function () {
 
 
 //PARTIE ADMIN
+//home
+Route::get('/admin', [AdministrateurController::class, 'home_Admin'])->name('admin');
+
+//Produit
 // Traiter le formulaire (POST)
-Route::post('/admin/ajoutProduit', [ProduitController::class, 'ajoutProduit'])->name('admin.ajoutProduit');
+Route::post('/admin/produit/ajoutProduit', [ProduitController::class, 'ajoutProduit'])->name('admin.ajoutProduit');
 
 // Afficher le formulaire (GET)
-Route::get('/admin/ajoutProduit', [ProduitController::class, 'affichFormProduit'])->name('admin.formAjoutProduit');
+Route::get('/admin/produit/ajoutProduit', [ProduitController::class, 'affichFormProduit'])->name('admin.formAjoutProduit');
 
+// liste des produits disponibles sur luxeshop (GET)
+Route::get('/admin/produit/listeProduit', [ProduitController::class, 'listeAllProduit'])->name('admin.listeProduit');
+
+
+//user
+// liste des users disponibles sur luxeshop (GET)
+Route::get('/admin/user/listeUser', [UtilisateurController::class, 'listeAllUser'])->name('admin.listeUser');
 
 ?>

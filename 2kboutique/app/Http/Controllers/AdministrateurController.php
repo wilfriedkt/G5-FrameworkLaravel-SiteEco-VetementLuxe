@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\administrateur;
+use App\Models\Produit;
+
 
 use Illuminate\Http\Request;
 
@@ -9,9 +12,14 @@ class AdministrateurController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function home_Admin()
     {
-        //
+        //Affiche la page d'acceuille admin
+        // Récupérer les produits en fonction du type
+        $produitsPhares = Produit::where('type', 'Produit Phare')->get();
+        $nouveauxProduits = Produit::where('type', 'Nouveau Produit')->get();
+
+        return view('admin.homeAdmin', compact('produitsPhares', 'nouveauxProduits'));
     }
 
     /**
