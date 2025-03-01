@@ -13,7 +13,7 @@ class ProduitController extends Controller
     // Afficher le formulaire pour ajouter un produit
     public function affichFormProduit()
     {
-        return view('admin.ajoutProduit');
+        return view('admin.produit.ajoutProduit');
     }
 
 
@@ -54,6 +54,12 @@ class ProduitController extends Controller
         return redirect()->route('admin.formAjoutProduit')->with('status', 'Votre produit a bien été ajouté avec succès.');
     }
 
+    //liste de tout les produit sur le site web
+    public function listeAllProduit()
+    {
+        $toutProduits = Produit::all(); // Récupère tous les produits
+        return view('admin.produit.listeProduit', compact('toutProduits'));
+    }
 
 
     /**

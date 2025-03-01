@@ -1,4 +1,4 @@
-/* Style pour le conteneur des gadgets */
+
 /* Style pour le conteneur des gadgets */
 .Your_Gadgets_Store {
     display: grid;
@@ -79,6 +79,14 @@
 
 
  /* Styles pour les produits de mode tendance */
+ .trending_fashion_zone{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+ }
+
 .fashion-item {
     width: 250px;
     padding: 15px;

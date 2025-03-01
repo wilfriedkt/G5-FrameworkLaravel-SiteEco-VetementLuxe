@@ -92,6 +92,7 @@
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}
+                    <a href="{{ route('admin.listeProduit') }}">Voir la liste des produits</a>
                 </div>
             @endif
 

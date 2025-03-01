@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Utilisateur;
+
 use Illuminate\Http\Request;
 
 class UtilisateurController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * liste de tout les users de luxeshop
      */
-    public function index()
+    public function listeAllUser()
     {
-        //
+        $allUser = Utilisateur::all(); // Récupère tous les utilisateurs
+        return view('admin.user.listeUser', compact('allUser'));
     }
 
     /**
