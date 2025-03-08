@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Luxeshop - Ajouter un produit</title>
+    <title>Luxeshop - Ajouter un user</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
 
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #e3f0fa 100%);
-
             font-family: 'Ubuntu', sans-serif;
         }
 
@@ -133,8 +132,8 @@
                 </div>
 
                 <div class="form-step">
-                    <label for="image">Image du produit</label>
-                    <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png">
+                    <label for="image">photo</label>
+                    <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png">
                 </div>
 
                 <div class="form-step">
