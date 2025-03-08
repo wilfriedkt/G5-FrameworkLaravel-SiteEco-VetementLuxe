@@ -30,7 +30,8 @@ Route::get('/products_details/{id}', [DetailProduitController::class, 'detailPro
 // Routes d'authentification
 Route::match(['get', 'post'], '/inscription', [AuthController::class, 'inscription'])->name('inscription');
 Route::post('/connexion', [AuthController::class, 'connexion'])->name('connexion');
-Route::get('/deconnexion', [AuthController::class, 'deconnexion'])->name('deconnexion');
+Route::get('/profil', [AuthController::class, 'voirProfil'])->name('profil');
+Route::post('/deconnexion', [AuthController::class, 'deconnexion'])->name('deconnexion');
 Route::delete('/delete-account', [AuthController::class, 'deleteAccount'])->name('delete.account')->middleware('auth');
 
 

@@ -118,6 +118,37 @@ nav ul li a:focus {
     display: block;
 }
 
+
+
+/*Affiche image profil*/
+.profile-icon {
+    width: 30px; /* Taille de l'icône */
+    height: 30px; /* Taille de l'icône */
+    border-radius: 50%; /* Rendre l'icône circulaire */
+    object-fit: cover; /* Pour garder une bonne proportion de l'image */
+}
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-menu .dropdown {
+    display: none; /* Masquer par défaut */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-menu:hover .dropdown {
+    display: block; /* Afficher le menu déroulant lors du survol */
+}
+
+
+
+
 .dropdown-one li a:hover {
     color: #14b7d8;
 }

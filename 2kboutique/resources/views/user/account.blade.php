@@ -211,7 +211,7 @@
         if (successMessage && redirectUrl) {
             setTimeout(function() {
                 window.location.href = redirectUrl; // Redirige vers l'accueil
-            }, 5000); // Attente de 3 secondes
+            }, 3000); // Attente de 3 secondes
         }
     });
 </script>
