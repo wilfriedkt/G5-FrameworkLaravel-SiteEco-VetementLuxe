@@ -11,67 +11,76 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+     /**
+     * Inscription d'un utilisateur
+     */
     public function inscription(Request $request)
     {
-        // Validation des données
-        $request->validate([
-            'nom' => 'required|string|max:50',
-            'prenom' => 'required|string|max:50',
-            'email' => 'required|string|email|max:100|unique:utilisateurs,email',
-            'motDePasse' => 'required|string|min:6|confirmed',
-        ]);
+        if ($request->isMethod('post')) {
+            // Validation des données
+            $request->validate([
+                'nom' => 'required|string|max:50',
+                'prenom' => 'required|string|max:50',
+                'email' => 'required|string|email|max:100|unique:utilisateurs,email',
+                'motDePasse' => 'required|string|min:6|confirmed',
+                'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // La photo est optionnelle
+            ]);
 
-        // Création de l'utilisateur
-        $utilisateur = Utilisateur::create([
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'email' => $request->email,
-            'motDePasse' => Hash::make($request->motDePasse),
-        ]);
-        
-        Auth::login($utilisateur);
-        session()->regenerate();
+            // Gestion de l'image
+            $photoPath = null;
+            if ($request->hasFile('photo')) {
+                $photoPath = $request->file('photo')->store('photoUser', 'public'); // Enregistre dans public/photoUser
+            }
 
-        if ($utilisateur) {
-            return redirect()->route('index')->with('success', 'Super 😁 Compte crée avec succès !');
-        } else {
-            redirect()->route('account')->with('error', "Echec de la création 👎🏿");
+            // Création de l'utilisateur
+            $utilisateur = Utilisateur::create([
+                'nom' => $request->nom,
+                'prenom' => $request->prenom,
+                'email' => $request->email,
+                'motDePasse' => Hash::make($request->motDePasse),
+                'photo' => $photoPath, // Sauvegarde du chemin de l'image
+            ]);
+
+            // Authentifier l'utilisateur
+            Auth::login($utilisateur);
+            session()->regenerate();
+
+            // Retourner sur la page d'inscription avec un message avant redirection
+            return redirect()->route('inscription')->with([
+                'success' => 'Super 😁 Compte créé avec succès ! Vous serez redirigé vers l\'accueil...',
+                'redirect' => route('index') // Stocke l'URL de redirection
+            ]);
         }
-        // Redirection vers une autre page après l'inscription
-        // return redirect()->route('/')->with('success', 'Inscription réussie !');
+
+        // Afficher le formulaire d'inscription lors d'une requête GET
+        return view('user.account');
     }
 
-    //dans le blade ajoutez :
-    // @if(session('success'))
-    // <p style="color: green;">{{ session('success') }}</p>
-    // @endif
-
-    // défini la route aussi : <form action="{{ route('register') }}" method="POST">
 
 
 
     public function connexion(Request $request)
-    {
-        // Validation des entrées
-        $request->validate([
-            'email' => 'required|email|max:100',
-            'motDePasse' => 'required|string|min:6',
-        ]);
+{
+    // Validation des entrées
+    $request->validate([
+        'email' => 'required|email|max:100',
+        'motDePasse' => 'required|string|min:6',
+    ]);
 
-        // Récupérer l'utilisateur
-        $utilisateur = Utilisateur::where('email', $request->email)->first();
+    // Récupérer l'utilisateur par son email
+    $utilisateur = Utilisateur::where('email', $request->email)->first();
 
-        // Vérifier si l'utilisateur existe et si le mot de passe est correct
-        if (!$utilisateur || !Hash::check($request->motDePasse, $utilisateur->motDePasse)) {
-            return back()->withErrors(['error' => 'Email ou mot de passe incorrect']);
-        }
-
-        // Authentifier l'utilisateur
-        Auth::connexion($utilisateur);
-
-        // Redirection vers le tableau de bord
-        return redirect()->route('dashboard')->with('success', 'Connexion réussie !');
+    // Vérifier si l'utilisateur existe et si le mot de passe est correct
+    if (!$utilisateur || !Hash::check($request->motDePasse, $utilisateur->motDePasse)) {
+        return back()->withErrors(['error' => 'Email ou mot de passe incorrect']);
     }
+
+    // Authentifier l'utilisateur
+    Auth::login($utilisateur);
+
+    // Rediriger vers la page d'accueil avec un message de succès
+    return redirect()->route('index')->with('successConn', 'Connexion réussie !');
+}
 
     public function deconnexion()
     {
