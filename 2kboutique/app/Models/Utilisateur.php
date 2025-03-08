@@ -13,7 +13,7 @@ class Utilisateur extends Authenticatable
 
     protected $primaryKey = 'idUtilisateur'; // Clé primaire
 
-    protected $fillable = ['nom', 'prenom', 'email', 'motDePasse'];
+    protected $fillable = ['nom', 'prenom', 'email', 'motDePasse', 'photo'];
 
     public $timestamps = false; // Pas besoin de created_at et updated_at
 }

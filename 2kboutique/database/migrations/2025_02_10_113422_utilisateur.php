@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('prenom', 50);
             $table->string('email', 100)->unique();
             $table->string('motDePasse', 255);
+            $table->string('photo')->nullable();
             $table->timestamp('dateInscription')->default(now());});
     }
 
