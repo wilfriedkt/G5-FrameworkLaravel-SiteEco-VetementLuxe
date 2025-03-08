@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 
 class UtilisateurController extends Controller
 {
-    /**
-     * liste de tout les users de luxeshop
-     */
+    // Ajouter un user sur luxeshop
+    public function ajoutUser()
+    {
+        return view('admin.user.ajoutUser');
+    }
+
+    //liste de tout les users de luxeshop
     public function listeAllUser()
     {
         $allUser = Utilisateur::all(); // Récupère tous les utilisateurs

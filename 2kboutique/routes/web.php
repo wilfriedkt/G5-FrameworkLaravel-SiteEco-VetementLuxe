@@ -71,7 +71,7 @@ Route::get('/suivie_commande', function () {
 Route::get('/admin', [AdministrateurController::class, 'home_Admin'])->name('admin');
 
 //Produit
-// Traiter le formulaire (POST)
+// Ajout de produits Traiter le formulaire (POST)
 Route::post('/admin/produit/ajoutProduit', [ProduitController::class, 'ajoutProduit'])->name('admin.ajoutProduit');
 
 // Afficher le formulaire (GET)
@@ -82,6 +82,9 @@ Route::get('/admin/produit/listeProduit', [ProduitController::class, 'listeAllPr
 
 
 //user
+//Ajouter un user
+Route::get('/admin/user/ajoutUser', [UtilisateurController::class, 'ajoutUser'])->name('admin.ajoutUser');
+
 // liste des users disponibles sur luxeshop (GET)
 Route::get('/admin/user/listeUser', [UtilisateurController::class, 'listeAllUser'])->name('admin.listeUser');
 
