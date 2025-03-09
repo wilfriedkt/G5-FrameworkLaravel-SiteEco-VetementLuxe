@@ -5,6 +5,7 @@ use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\DetailProduitController;
 use App\Http\Controllers\UtilisateurController;
 use App\Http\Controllers\AdministrateurController;
+use App\Http\Controllers\PanierController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 //use Illuminate\Routing\AbstractRouteCollection;
@@ -41,9 +42,11 @@ Route::get('/account', function () {
 })->name('account');
 
 // Route pour le panier
-Route::get('/cart', function () {
-    return view('user.cart');
-});
+//Ajouter
+Route::post('/panier/ajouter/{id}', [PanierController::class, 'ajouterAuPanier'])->name('panier.ajouter');
+//Voir panier
+Route::get('/panier', [PanierController::class, 'voirPanier'])->name('panier.voir');
+
 
 // Route pour consulter une commande
 Route::get('/consulter_commande', function () {

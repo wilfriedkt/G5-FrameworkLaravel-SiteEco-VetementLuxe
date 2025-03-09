@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products - Redstore</title>
+    <title>Panier - Luxeshop</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -16,54 +15,34 @@
     </div>
 
     <div class="small-container cart-page">
+        @if($paniers->isEmpty())
+            <p>Votre panier est vide.</p>
+        @else
         <table>
             <tr>
                 <th>Produit</th>
                 <th>Quantité</th>
                 <th>Subtotal</th>
             </tr>
+
+            @foreach($paniers as $item)
             <tr>
                 <td>
                     <div class="cart-info">
-                        <img src="{{ asset('images/gucci1.png') }}">
+                        <img src="{{ asset('storage/' . $item->produit->image) }}">
                         <div>
-                            <p>Gucci - Modèle ‎823832 XJG7Z 1152</p>
-                            <small>Prix: 10.000 FCFA</small><br>
-                            <a href="">Supprimé</a>
+                            <p>{{ $item->produit->nom }}</p>
+                            <small>{{ number_format($item->produit->prix, 0, ',', ' ') }} FCFA</small><br>
+                            <a href="" style="color: #e8860e;">Supprimé</a>
+                            <a href="" style="color: #14b7d8; font-weight: 600;">Passer à la commande</a>
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>10.000 FCFA</td>
+                <td><input type="number" value="{{ $item->quantite }}" style="width: 17%"></td>
+                <td>{{ number_format($item->prix_total, 0, ',', ' ') }} FCFA</td>
             </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="{{ asset('images/gucci2.png') }}">
-                        <div>
-                            <p>Gucci - Modèle ‎789582 XJGUL 5728</p>
-                            <small>Prix: 8.500 FCFA</small><br>
-                            <a href="">Supprimé</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>8.500 FCFA</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="{{ asset('images/gucci1.png') }}">
-                        <div>
-                            <p>Gucci - Modèle ‎789582 XJGUL 5728</p>
-                            <small>Prix: 8.500 FCFA</small><br>
-                            <a href="">Supprimé</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>8.500 FCFA</td>
-            </tr>
+            @endforeach
+        @endif
         </table>
 
         <div class="total-price">

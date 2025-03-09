@@ -215,19 +215,22 @@ p{
 }
 
 .btn, .bouton-commander {
+    text-align: center;
     display: inline-block;
     color: #fff;
     padding:8px 30px;
-    margin: 30px 0px;
+    margin: 10px 0px;
     border-radius: 30px;
     transition: background 0.5s;
 }
 
 .btn{
+    height: 30%;
     background: #0dc0e4;
 }
 
 .bouton-commander {
+    width: 49%;
     background: #e8860e;
 }
 
@@ -626,7 +629,7 @@ input:focus{
 
 
 
-        /*------------------------------ cart, listeUser and listeProduit items ------------------------------*/
+        /*------------------------------ panier, listeUser and listeProduit items ------------------------------*/
 .cart-page{
     margin: 80px auto;
 }
