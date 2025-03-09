@@ -17,7 +17,7 @@
             @auth
             <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
             <li>
-                <a href="{{ url('/cart') }}">
+                <a href="{{ url('/panier') }}">
                     <i class="fas fa-shopping-cart" style="font-size: 24px; color: black;"></i> <!-- Icône panier -->
                 </a>
             </li>

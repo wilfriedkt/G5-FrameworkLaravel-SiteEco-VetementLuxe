@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('produits_commandes', function (Blueprint $table) {
-            $table->foreignId('idCommande')->constrained('commandes','idCommande')->onDelete('cascade');
-            $table->foreignId('idProduit')->constrained('produits','idProduit')->onDelete('cascade');
+            $table->foreignId('commande_id')->references('idCommande')->on('commandes')->onDelete('cascade');// Clé étrangère commandes
+            $table->foreignId('idProduit')->references('id')->on('produits')->onDelete('cascade');// Clé étrangère produit
             $table->integer('quantite')->check('quantite > 0');
-            $table->primary(['idCommande', 'idProduit']);
+            $table->primary(['commande_id', 'idProduit']);
         });
-        
+
     }
 
     /**

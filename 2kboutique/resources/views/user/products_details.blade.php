@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails du produit - Redstore</title>
+    <title>Détails du produit - Luxeshop</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -18,6 +18,23 @@
 
     </div>
 </div>
+
+@if (session('success'))
+<!--<div id="successMessage" style="background-color: green; heigth: 30px; padding: 5px; font-size: 16px; font-weight: bold; text-align:center;">-->
+<div class="alert alert-success" style="width: 80%">
+    {{ session('success') }}
+</div>
+@endif
+
+@if ($errors->any())
+<div class="alert alert-danger" style="color: red; font-size: 16px;">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 <div class="small-container single-product">
     <div class="row">
@@ -39,9 +56,13 @@
                 <option>XXL</option>
             </select>
 
-            <input type="number" value="1">
-            <a href="{{ url('/cart') }}" class="btn">Ajouter au panier</a>
+            <form style="" action="{{ route('panier.ajouter', $produit->id) }}" method="POST">
+                @csrf
+                <input type="number" name="quantite" value="1" min="1">
+                <button type="submit" class="btn" style="width: 35%;">Ajouter au panier</button>
+            </form>
             <a href="{{ url('') }}" class="bouton-commander">Commander</a>
+            <br><br>
             <h3>Détails du produit <i class="fa fa-indent"></i></h3>
             <p>{{ $produit->description }}</p>
         </div>
