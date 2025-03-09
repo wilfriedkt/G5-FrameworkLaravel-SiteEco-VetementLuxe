@@ -84,9 +84,9 @@ class AuthController extends Controller
 
     public function deconnexion()
     {
-        Auth::deconnexion();
+        Auth::logout();
         Session::flush();
-        return redirect()->route('login.form')->with('success', 'Déconnexion réussie.'); // Redirection vers la page de connexion où je dois préciser la route
+        return redirect()->route('index')->with('success', 'Déconnexion réussie.'); // Redirection vers la page de connexion où je dois préciser la route
     }
 
     public function deleteAccount(Request $request)

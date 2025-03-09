@@ -15,5 +15,15 @@ class Utilisateur extends Authenticatable
 
     protected $fillable = ['nom', 'prenom', 'email', 'motDePasse', 'photo'];
 
+    protected $hidden = [
+        'motDePasse', 'remember_token',
+    ];
+
+    // Cette méthode est cruciale pour informer Laravel d'utiliser 'motDePasse' au lieu de 'password'
+    public function getAuthPassword()
+    {
+        return $this->motDePasse;
+    }
+
     public $timestamps = false; // Pas besoin de created_at et updated_at
 }
