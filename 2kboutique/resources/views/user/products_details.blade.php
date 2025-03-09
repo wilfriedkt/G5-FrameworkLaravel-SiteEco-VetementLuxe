@@ -14,31 +14,7 @@
 <body class="bodyAll">
 <div class ="header" id="header">
     <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px" height="60px"></a>
-            </div>
-
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="{{ url('/') }}">Accueil</a></li>
-                    <li class="submenu">
-                        <a href="{{ url('/products') }}">Vêtements</a>
-                        <ul class="dropdown">
-                            <li><a href="{{ url('/products_homme') }}">Hommes</a></li>
-                            <li><a href="{{ url('/products_femme') }}">Femmes</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="{{ url('/consulter_commande') }}">Commandes</a></li>
-                    <li><a href="{{ url('/account') }}">S'inscrire/Se connecter</a></li>
-                </ul>
-            </nav>
-
-            <a href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" width="30px" height="30px"></a>
-            <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
-
-        </div>
+        @include('user.nav')
 
     </div>
 </div>
@@ -71,6 +47,9 @@
         </div>
     </div>
 </div>
+
+<!----------------------------------footer------------------------------------->
+@include('user.footer')
 
 
 </script>

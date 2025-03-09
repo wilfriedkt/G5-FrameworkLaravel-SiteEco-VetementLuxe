@@ -1,6 +1,6 @@
 <div class="navbar">
     <div class="logo">
-        <a href="{{ url('/') }}"><img src="images/logo_2kboutique.png" width="100px" height="60px"></a>
+        <a href="{{ url('/') }}"><img src="images/logo_2kboutique.png" width="100px" height="60px" alt="Luxeshop logo"></a>
     </div>
     <nav>
         <ul id="MenuItems">
@@ -22,13 +22,13 @@
                 </a>
             </li>
             <li class="submenu" style="margin-left: 0px">
-                <a href="#" id="openModal">
+                <a href="#">
                     <!-- Afficher la photo de profil -->
                     <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/akre.jpg') }}"
                         alt="Photo de profil" class="profile-icon">
                 </a>
                 <ul class="dropdown">
-                    <li><a href="{{ url('/profil') }}">Mon Profil</a></li>
+                    <li><a href="#" id="openModal">Mon Profil</a></li>
                     <li>
                         <form method="POST" action="{{ route('deconnexion') }}">
                             @csrf

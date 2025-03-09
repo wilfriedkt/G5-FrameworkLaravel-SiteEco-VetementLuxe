@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="footer-col-2">
-                <img src="images/logo_2kboutique.png" alt="2K Boutique Logo">
+                <img src="images/logo_2kboutique.png" alt="Luxeshop Logo">
                 <p>Notre objectif est de rendre le plaisir et les bienfaits du shopping accessibles à tous.</p>
             </div>
             <div class="footer-col-3">
@@ -21,7 +21,7 @@
                     <li>Devenir affilié</li>
                     <li>Consulter la FAQ</li>
                     <li>Contacter le service support</li>
-                    <li>À propos de 2KBoutique</li>
+                    <li>À propos de Luxeshop</li>
                 </ul>
             </div>
             <div class="footer-col-4">
@@ -36,6 +36,6 @@
         </div>
 
         <hr> <!-- Ligne horizontale -->
-        <p class="copyright">Copyright © 2025 - 2KBoutique - Tous droits réservés</p>
+        <p class="copyright">Copyright © 2025 - Luxeshop - Tous droits réservés</p>
     </div>
 </div>

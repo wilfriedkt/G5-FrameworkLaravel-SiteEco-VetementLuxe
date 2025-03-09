@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -75,8 +76,9 @@ class AuthController extends Controller
 
     public function voirProfil()
 {
-    $infoUser = Auth::user(); // Récupérer l'utilisateur connecté
-    return view('user.profil', compact('infoUser')); // Passer l'utilisateur à la vue
+    //$infoUser = Auth::user(); // Récupérer l'utilisateur connecté
+    //return view('user.profil', compact('infoUser')); // Passer l'utilisateur à la vue
+    return view('user.profil'); // Passer l'utilisateur à la vue
 }
 
 
@@ -103,7 +105,7 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Rediriger avec un message de confirmation
-        return redirect()->route('login.form')->with('success', 'Votre compte a été supprimé avec succès.');
+        return redirect()->route('index')->with('success', 'Votre compte a été supprimé avec succès.');
     }
 }
 

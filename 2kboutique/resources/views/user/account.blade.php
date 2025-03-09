@@ -18,36 +18,14 @@
 
 <body>
     <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('images/logo_2kboutique.png') }}" width="100px"
-                        height="60px"></a>
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="{{ url('/') }}">Accueil</a></li>
-                    <li class="submenu">
-                        <a href="#">Vêtements</a>
-                        <ul class="dropdown">
-                            <li><a href="{{ url('products_homme') }}">Hommes</a></li>
-                            <li><a href="{{ url('products_femme') }}">Femmes</a></li>
-                        </ul>
-                    </li>
-
-
-                </ul>
-            </nav>
-
-
-            <img src="{{ asset('images/menu.png') }}" class="menu-icon" onClick="menutoggle()">
-        </div>
+        @include('user.nav')
     </div>
 
     <div class="account-page">
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="{{ asset('images/imgAcceuil.png') }}" width="100%">
+                    <img src="{{ asset('images/imgAcceuil.png') }}" width="65%" style="margin-left:100px" >
                 </div>
                 <div class="col-2">
                     <div class="form-container">
@@ -116,46 +94,9 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Téléchargez Notre Application</h3>
-                    <p>Téléchargez l'application pour Android et iOS.</p>
-                    <div class="app-logo">
-                        <img src="{{ asset('images/play-store.png') }}" alt="Google Play">
-                        <img src="{{ asset('images/app-store.png') }}" alt="App Store">
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="{{ asset('images/logo_2kboutique.png') }}" alt="2K Boutique Logo">
-                    <p>Notre objectif est de rendre le plaisir et les bienfaits du shopping accessibles à tous.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Liens Utiles</h3>
-                    <ul>
-                        <li>Blog</li>
-                        <li>Politique de retour</li>
-                        <li>Devenir affilié</li>
-                        <li>Consulter la FAQ</li>
-                        <li>Contacter le service support</li>
-                        <li>À propos de 2KBoutique</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Suivez-nous</h3>
-                    <ul class="social-links">
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright">Copyright © 2025 - 2KBoutique - Tous droits réservés</p>
-        </div>
-    </div>
+   <!----------------------------------footer------------------------------------->
+   @include('user.footer')
+
 
     <script>
         var menuItems = document.getElementById("MenuItems");

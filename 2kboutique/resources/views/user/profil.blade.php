@@ -1,5 +1,4 @@
-<!-- resources/views/user/profile.blade.php -->
-@section('content')
+
     <!-- Fenêtre modale -->
     <div id="profileModal" class="modal">
         <div class="modal-content">
@@ -7,26 +6,25 @@
             <h2>Mon Profil</h2>
             <div class="profile-info">
                 <!-- Affichage de la photo de l'utilisateur -->
-                <img src="{{ asset('storage/' . $infoUser->photo) }}" alt="Photo Profil" class="profile-photo">
+                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/akre.jpg') }}" alt="Photo Profil" class="profile-photo">
+                <br>
                 <div class="profile-details">
-                    <p><strong>Nom:</strong> {{ $infoUser->nom }}</p>
-                    <p><strong>Prénom:</strong> {{ $infoUser->prenom }}</p>
-                    <p><strong>Email:</strong> {{ $infoUser->email }}</p>
-                    <p><strong>Téléphone:</strong> {{ $infoUser->telephone ?? 'Non renseigné' }}</p>
-                    <p><strong>Adresse:</strong> {{ $infoUser->adresse ?? 'Non renseignée' }}</p>
+                    <p><strong>Nom:</strong> {{ Auth::user()->nom }}</p>
+                    <p><strong>Prénom:</strong> {{ Auth::user()->prenom }}</p>
+                    <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                    <p><strong>Téléphone:</strong> {{ Auth::user()->telephone ?? 'Non renseigné' }}</p>
+                    <p><strong>Adresse:</strong> {{ Auth::user()->adresse ?? 'Non renseignée' }}</p>
                 </div>
             </div>
             <!-- Formulaire pour supprimer le compte -->
             <form action="{{ route('delete.account') }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+                <button type="submit" class="btn-danger">Supprimer mon compte</button>
             </form>
         </div>
     </div>
-@endsection
 
-@section('styles')
     <style>
         /* Styles pour la fenêtre modale */
         .modal {
@@ -43,10 +41,11 @@
         }
 
         .modal-content {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 60%;
+            background: radial-gradient(#fff, #f3faff);
+            padding: 20px;
+            border-radius: 5px;
+            margin-left: 70%;
+            width: 25%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
@@ -72,6 +71,7 @@
 
         .profile-info {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-top: 20px;
@@ -94,35 +94,21 @@
         }
 
         .btn-danger {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
+            color: #fff;
+            padding:8px 30px;
+            margin: 30px 0px;
+            border-radius: 30px;
+            transition: background 0.5s;
+            background: #e8860e;
         }
 
         .btn-danger:hover {
-            background-color: darkred;
+            background: #ff8c00;
         }
 
-        /* Styles pour le bouton d'ouverture de la modale */
-        #openModal {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        #openModal:hover {
-            background-color: #0056b3;
-        }
     </style>
-@endsection
 
-@section('scripts')
+
     <script>
         // Ouvrir la modale lorsque l'utilisateur clique sur le bouton
         document.getElementById("openModal").onclick = function() {
@@ -141,4 +127,3 @@
             }
         }
     </script>
-@endsection
