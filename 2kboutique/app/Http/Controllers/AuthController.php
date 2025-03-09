@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
-     /**
+    /**
      * Inscription d'un utilisateur
      */
     public function inscription(Request $request)
@@ -33,7 +33,7 @@ class AuthController extends Controller
             }
 
             // Création de l'utilisateur
-            $utilisateur = Utilisateur::create([
+            $user = Utilisateur::create([
                 'nom' => $request->nom,
                 'prenom' => $request->prenom,
                 'email' => $request->email,
@@ -42,8 +42,7 @@ class AuthController extends Controller
             ]);
 
             // Authentifier l'utilisateur
-            Auth::login($utilisateur);
-            session()->regenerate();
+            Auth::login($user);
 
             // Retourner sur la page d'inscription avec un message avant redirection
             return redirect()->route('inscription')->with([
@@ -56,55 +55,58 @@ class AuthController extends Controller
         return view('user.account');
     }
 
-
-
-
+    // Traitement de la connexion
     public function connexion(Request $request)
-{
-    // Validation des entrées
-    $request->validate([
-        'email' => 'required|email|max:100',
-        'motDePasse' => 'required|string|min:6',
-    ]);
-
-    // Récupérer l'utilisateur par son email
-    $utilisateur = Utilisateur::where('email', $request->email)->first();
-
-    // Vérifier si l'utilisateur existe et si le mot de passe est correct
-    if (!$utilisateur || !Hash::check($request->motDePasse, $utilisateur->motDePasse)) {
-        return back()->withErrors(['error' => 'Email ou mot de passe incorrect']);
-    }
-
-    // Authentifier l'utilisateur
-    Auth::login($utilisateur);
-
-    // Rediriger vers la page d'accueil avec un message de succès
-    return redirect()->route('index')->with('successConn', 'Connexion réussie !');
-}
-
-    public function deconnexion()
     {
-        Auth::deconnexion();
-        Session::flush();
-        return redirect()->route('login.form')->with('success', 'Déconnexion réussie.'); // Redirection vers la page de connexion où je dois préciser la route
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'motDePasse' => 'required|string',
+        ]);
+
+        $user = Utilisateur::where('email', $credentials['email'])->first();
+
+        if ($user && Hash::check($credentials['motDePasse'], $user->motDePasse)) {
+            Auth::login($user);
+            return redirect()->route('index');
+        }
+
+        return back()->withErrors(['email' => 'Email ou mot de passe incorrect.']);
     }
 
-    public function deleteAccount(Request $request)
+
+    public function voirProfil()
 {
-    $user = Auth::Utilisateur(); // Récupérer l'utilisateur connecté
-
-    // Déconnexion de l'utilisateur
-    Auth::logout();
-
-    // Suppression de l'utilisateur
-    $user->delete();
-
-    // Invalider la session
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-
-    // Rediriger avec un message de confirmation
-    return redirect()->route('login.form')->with('success', 'Votre compte a été supprimé avec succès.');
+    //$infoUser = Auth::user(); // Récupérer l'utilisateur connecté
+    //return view('user.profil', compact('infoUser')); // Passer l'utilisateur à la vue
+    return view('user.profil'); // Passer l'utilisateur à la vue
 }
 
+
+    // Déconnexion
+    public function deconnexion(Request $request)
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
+    // Suppression du compte utilisateur
+    public function deleteAccount(Request $request)
+    {
+        $user = Auth::user(); // Récupérer l'utilisateur connecté
+
+        // Déconnexion de l'utilisateur
+        Auth::logout();
+
+        // Suppression de l'utilisateur
+        $user->delete();
+
+        // Invalider la session
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Rediriger avec un message de confirmation
+        return redirect()->route('index')->with('success', 'Votre compte a été supprimé avec succès.');
+    }
 }
+
+?>

@@ -5,15 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Utilisateur extends Authenticatable
-{
+class Utilisateur extends Authenticatable {
     use HasFactory;
 
-    protected $table = 'utilisateurs'; // Nom de la table
-
-    protected $primaryKey = 'idUtilisateur'; // Clé primaire
+    protected $table = 'utilisateurs';
+    protected $primaryKey = 'idUtilisateur';
 
     protected $fillable = ['nom', 'prenom', 'email', 'motDePasse', 'photo'];
 
-    public $timestamps = false; // Pas besoin de created_at et updated_at
+    protected $hidden = ['motDePasse'];
+
+    public $timestamps = false;
+
+    // Override pour l'authentification Laravel
+    public function getAuthPassword() {
+        return $this->motDePasse;
+    }
 }
+
+?>
